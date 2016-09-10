@@ -21,7 +21,8 @@ http://prpr.pickoma.com/
 ```
  (websocket support)
 [ie10,firefox,chrome]                              [gce]
-       Browser <-------- CloudFlare <-------> WebSocket Server (NodeJS)
+       Browser <-------- CloudFlare <-------> WebSocket Server @ 8080 (NodeJS)
+                                              Web Server       @ 80   (Nginx)
 ```
 
 # 目前功能

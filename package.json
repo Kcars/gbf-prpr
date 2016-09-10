@@ -1,0 +1,25 @@
+{
+  "name": "gbf-prpr",
+  "version": "1.0.0",
+  "description": "gbf-prpr\r ===============",
+  "main": "ws.js",
+  "dependencies": {
+    "twitter": "^1.4.0",
+    "websocket": "^1.0.23",
+    "crawler": "^0.4.3" 
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kcars/gbf-prpr.git"
+  },
+  "author": "Kcars",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kcars/gbf-prpr/issues"
+  },
+  "homepage": "https://github.com/Kcars/gbf-prpr#readme"
+}
