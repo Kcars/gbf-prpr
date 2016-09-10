@@ -1,0 +1,419 @@
+{
+                    "name"     : "RG" ,
+                    "children" :
+            [
+            {
+                "name" : "所有遊戲" ,
+                "children":
+                [
+                    {
+                        "name"     : "視訊遊戲" ,
+                        "size"     : 50 ,
+                        "children" :
+                        [
+                            {
+                                "name"     : "百家樂" ,
+                                "size"     : 80       ,
+                                "children" : 
+                                [
+                                    {
+                                        "name"     : "百家樂A桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂B桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂C桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂D桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂E桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂F桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂H桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂I桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5} ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "百家樂J桌" ,
+                                        "size"     : 50          ,
+                                        "children" : 
+                                        [
+                                            {"name" : "閒家"   , "size" : 40} ,
+                                            {"name" : "莊家"   , "size" : 30} ,
+                                            {"name" : "和局"   , "size" : 10} ,
+                                            {"name" : "閒對對" , "size" : 5}  ,
+                                            {"name" : "莊對對" , "size" : 5} 
+                                        ]
+                                    }
+                                ]
+                            } ,
+                            {
+                                "name"     : "番攤" ,
+                                "size"     : 10     ,
+                                "children" :
+                                [
+                                    {"name" : "單號" , "size" : 30} ,
+                                    {"name" : "雙號" , "size" : 50} ,
+                                    {"name" : "參號" , "size" : 20}
+                                ]
+                            } ,
+                            {
+                                "name"     : "輪盤" ,
+                                "size"     : 50     ,
+                                "children" : 
+                                [
+                                    {
+                                        "name"     : "輪盤A桌" ,
+                                        "size"     : 60 ,
+                                        "children" :
+                                        [
+                                            {"name" : "直接注"   , "size" : 10} ,
+                                            {"name" : "分注"     , "size" : 20} ,
+                                            {"name" : "街注"     , "size" : 30} ,
+                                            {"name" : "三數"     , "size" : 40} ,
+                                            {"name" : "角注"     , "size" : 50} ,
+                                            {"name" : "四個號碼" , "size" : 10} ,
+                                            {"name" : "線注"     , "size" : 20} ,
+                                            {"name" : "數位"     , "size" : 30} ,
+                                            {"name" : "列注"     , "size" : 40} ,
+                                            {"name" : "紅/黑"    , "size" : 50} ,
+                                            {"name" : "雙/單"    , "size" : 60} ,
+                                            {"name" : "低/高"    , "size" : 70} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "輪盤B桌" ,
+                                        "size"     : 40 ,
+                                        "children" :
+                                        [
+                                            {"name" : "直接注"   , "size" : 10} ,
+                                            {"name" : "分注"     , "size" : 20} ,
+                                            {"name" : "街注"     , "size" : 30} ,
+                                            {"name" : "三數"     , "size" : 40} ,
+                                            {"name" : "角注"     , "size" : 50} ,
+                                            {"name" : "四個號碼" , "size" : 10} ,
+                                            {"name" : "線注"     , "size" : 20} ,
+                                            {"name" : "數位"     , "size" : 30} ,
+                                            {"name" : "列注"     , "size" : 40} ,
+                                            {"name" : "紅/黑"    , "size" : 50} ,
+                                            {"name" : "雙/單"    , "size" : 60} ,
+                                            {"name" : "低/高"    , "size" : 70} 
+                                        ]
+                                    }
+                                ]
+                            } ,
+                            {
+                                "name"     : "骰子" ,
+                                "size"     : 40     ,
+                                "children" :
+                                [
+                                    {"name" : "大小"          , "size" : 50} ,
+                                    {"name" : "圍骰"          , "size" : 30} ,
+                                    {"name" : "全圍"          , "size" : 20} ,
+                                    {"name" : "單骰"          , "size" : 10} ,
+                                    {"name" : "雙骰"          , "size" : 10} ,
+                                    {"name" : "全骰"          , "size" : 20} ,
+                                    {"name" : "對子"          , "size" : 30} ,
+                                    {"name" : "牌九式"        , "size" : 10} ,
+                                    {"name" : "4或17點"       , "size" : 20} ,
+                                    {"name" : "5或16點"       , "size" : 30} ,
+                                    {"name" : "6或15點"       , "size" : 40} ,
+                                    {"name" : "7或14點"       , "size" : 30} ,
+                                    {"name" : "8或13點"       , "size" : 20} ,
+                                    {"name" : "9,10,11或12點" , "size" : 10} 
+                                ]
+                            } ,
+                            {
+                                "name"     : "魚蝦蟹" ,
+                                "size"     : 30 ,
+                                "children" :
+                                [
+                                    {"name" : "大小"          , "size" : 50} ,
+                                    {"name" : "單同骰"        , "size" : 40} ,
+                                    {"name" : "雙同骰"        , "size" : 30} ,
+                                    {"name" : "三同骰"        , "size" : 20} ,
+                                    {"name" : "指定一色"      , "size" : 10} ,
+                                    {"name" : "指定二色"      , "size" : 50} ,
+                                    {"name" : "指定三色"      , "size" : 40} ,
+                                    {"name" : "任意三色"      , "size" : 30} ,
+                                    {"name" : "圍骰"          , "size" : 20} ,
+                                    {"name" : "全圍"          , "size" : 10} ,
+                                    {"name" : "4及17點"       , "size" : 10} ,
+                                    {"name" : "5及16點"       , "size" : 20} ,
+                                    {"name" : "6及15點"       , "size" : 30} ,
+                                    {"name" : "7及14點"       , "size" : 40} ,
+                                    {"name" : "8及13點"       , "size" : 50} ,
+                                    {"name" : "9,10,11及12點" , "size" : 60} 
+                                ]
+                             } ,
+                            {
+                                "name"     : "龍虎" ,
+                                "size"     : 40     ,
+                                "children" : 
+                                [
+                                    {
+                                        "name" : "龍虎A桌" ,
+                                        "size" : 60 ,
+                                        "children" :
+                                        [
+                                            {"name" : "虎"   , "size" : 60} ,
+                                            {"name" : "龍"   , "size" : 50} ,
+                                            {"name" : "和"   , "size" : 40} ,
+                                            {"name" : "虎紅" , "size" : 30} ,
+                                            {"name" : "虎黑" , "size" : 20} ,
+                                            {"name" : "虎單" , "size" : 10} ,
+                                            {"name" : "虎雙" , "size" : 20} ,
+                                            {"name" : "龍紅" , "size" : 30} ,
+                                            {"name" : "龍黑" , "size" : 40} ,
+                                            {"name" : "龍單" , "size" : 50} ,
+                                            {"name" : "龍雙" , "size" : 60} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "龍虎B桌" ,
+                                        "size"     : 40 ,
+                                        "children" :
+                                        [
+                                            {"name" : "虎"   , "size" : 60} ,
+                                            {"name" : "龍"   , "size" : 50} ,
+                                            {"name" : "和"   , "size" : 40} ,
+                                            {"name" : "虎紅" , "size" : 30} ,
+                                            {"name" : "虎黑" , "size" : 20} ,
+                                            {"name" : "虎單" , "size" : 10} ,
+                                            {"name" : "虎雙" , "size" : 20} ,
+                                            {"name" : "龍紅" , "size" : 30} ,
+                                            {"name" : "龍黑" , "size" : 40} ,
+                                            {"name" : "龍單" , "size" : 50} ,
+                                            {"name" : "龍雙" , "size" : 60} 
+                                        ]
+                                    }
+                                ]
+                            } ,
+                            {
+                                "name"     : "保險百家樂" ,
+                                "size"     : 40           ,
+                                "children" : 
+                                [
+                                    {
+                                        "name"     : "保險百家樂A桌" ,
+                                        "size"     : 70 ,
+                                        "children" :
+                                        [
+                                            {"name" : "閒家"   , "size" : 60} ,
+                                            {"name" : "莊家"   , "size" : 20} ,
+                                            {"name" : "和局"   , "size" : 20} ,
+                                            {"name" : "閒對對" , "size" : 20} ,
+                                            {"name" : "莊對對" , "size" : 30} 
+                                        ]
+                                    } ,
+                                    {
+                                        "name"     : "保險百家樂B桌" ,
+                                        "size"     : 30 ,
+                                        "children" :
+                                        [
+                                            {"name" : "閒家"   , "size" : 60} ,
+                                            {"name" : "莊家"   , "size" : 20} ,
+                                            {"name" : "和局"   , "size" : 20} ,
+                                            {"name" : "閒對對" , "size" : 20} ,
+                                            {"name" : "莊對對" , "size" : 30} 
+                                        ]
+                                    }
+                                ]
+                            }
+
+                        ]
+                    } ,
+                    {
+                        "name"     : "電子遊戲" ,
+                        "size"     : 25 ,
+                        "children" :
+                        [
+                            {
+                                "name"     : "黃金館" ,
+                                "size"     : 40 ,
+                                "children" :
+                                [
+                                    {"name" : "5PK"        , "size" : 10} ,
+                                    {"name" : "12球"       , "size" : 10} ,
+                                    {"name" : "三國戰神傳" , "size" : 10} ,
+                                    {"name" : "小丑"       , "size" : 10} ,
+                                    {"name" : "水果星球"   , "size" : 10} ,
+                                    {"name" : "忍者傳說"   , "size" : 10} ,
+                                    {"name" : "抓狂西遊"   , "size" : 10} ,
+                                    {"name" : "幸運小馬"   , "size" : 10} ,
+                                    {"name" : "招財貓"     , "size" : 10} ,
+                                    {"name" : "動物叢林"   , "size" : 10} ,
+                                    {"name" : "黃金酒吧"   , "size" : 10} ,
+                                    {"name" : "齊天大聖"   , "size" : 10} ,
+                                    {"name" : "幸運鑽石"   , "size" : 10} ,
+                                    {"name" : "維京人"     , "size" : 10} ,
+                                    {"name" : "水果吧"     , "size" : 10} ,
+                                    {"name" : "動物樂園"   , "size" : 10} ,
+                                    {"name" : "法式輪盤"   , "size" : 10} ,
+                                    {"name" : "原始人"     , "size" : 10} ,
+                                    {"name" : "骰寶"       , "size" : 10} ,
+                                    {"name" : "魚蝦蟹"     , "size" : 10} ,
+                                    {"name" : "超八A"      , "size" : 10} ,
+                                    {"name" : "超八B"      , "size" : 10} ,
+                                    {"name" : "HUSA"       , "size" : 10} ,
+                                    {"name" : "PARTY88"    , "size" : 10} 
+                                ]
+                            } ,
+                            {
+                                "name"     : "3D館" ,
+                                "size"     : 40 ,
+                                "children" :
+                                [
+                                    {"name" : "小木偶"          , "size" : 10} ,
+                                    {"name" : "冠軍的榮耀"      , "size" : 10} ,
+                                    {"name" : "泰山"            , "size" : 10} ,
+                                    {"name" : "埃及"            , "size" : 10} ,
+                                    {"name" : "歡慶新年"        , "size" : 10} ,
+                                    {"name" : "幸運小丑馬戲團2" , "size" : 10} ,
+                                    {"name" : "輪盤天堂"        , "size" : 10} ,
+                                    {"name" : "綠野仙蹤"        , "size" : 10} ,
+                                    {"name" : "深海獵場"        , "size" : 10} ,
+                                    {"name" : "玩具戰爭"        , "size" : 10} ,
+                                    {"name" : "瘋狂上班族"      , "size" : 10} ,
+                                    {"name" : "西遊記"          , "size" : 10} ,
+                                    {"name" : "太空探險"        , "size" : 10} ,
+                                    {"name" : "夏威夷島"        , "size" : 10} ,
+                                    {"name" : "仲秋夜"          , "size" : 10} ,
+                                    {"name" : "鯊魚派對"        , "size" : 10} ,
+                                    {"name" : "足球先鋒"        , "size" : 10} ,
+                                    {"name" : "銀河金錢輪"      , "size" : 10} ,
+                                    {"name" : "3D動物王國"      , "size" : 10} ,
+                                    {"name" : "小丑"            , "size" : 10} ,
+                                    {"name" : "3D賽狗"          , "size" : 10} ,
+                                    {"name" : "3D賽車"          , "size" : 10} ,
+                                    {"name" : "海盜"            , "size" : 10} 
+                                ]
+                            } ,
+                            {
+                                "name"     : "Slot館" ,
+                                "size"     : 30 ,
+                                "children" :
+                                [
+                                    {"name" : "拳擊"       , "size" : 10} ,
+                                    {"name" : "金魚"       , "size" : 10} ,
+                                    {"name" : "幸運熊貓"   , "size" : 10} ,
+                                    {"name" : "莎哇的咖"   , "size" : 10} ,
+                                    {"name" : "暴發虎"     , "size" : 10} ,
+                                    {"name" : "金錢豹"     , "size" : 10} ,
+                                    {"name" : "木蘭變鳳凰" , "size" : 10} ,
+                                    {"name" : "快樂農夫"   , "size" : 10} 
+                                ]
+                            }
+                        ]
+                    } ,
+                    {
+                        "name"     : "對戰遊戲" ,
+                        "size"     : 25         ,
+                        "children" :
+                        [
+                            {"name" : "十三支"   , "size" : 10} ,
+                            {"name" : "博八博九" , "size" : 10} ,
+                            {"name" : "吹牛"     , "size" : 10} ,
+                            {"name" : "魚蝦蟹"   , "size" : 10} ,
+                            {"name" : "十點半"   , "size" : 10} ,
+                            {"name" : "德州撲克" , "size" : 10} ,
+                            {"name" : "九雞"     , "size" : 10} ,
+                            {"name" : "21點"     , "size" : 10} ,
+                            {"name" : "二人麻將" , "size" : 10} ,
+                            {"name" : "牌九"     , "size" : 10} 
+                        ]
+                    } ,
+                    {
+                        "name"     : "體育投注" ,
+                        "size"     : 10 ,
+                        "children" :
+                        [
+                            {"name" : "足球" , "size" : 10} ,
+                            {"name" : "棒球" , "size" : 10} ,
+                            {"name" : "籃球" , "size" : 10} 
+                        ]
+                    } ,
+                    {
+                        "name" : "彩票投注" ,
+                        "size" : 5
+                    }
+                ]}]}

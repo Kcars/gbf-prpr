@@ -1,0 +1,45 @@
+{
+  "name"     : "RG" ,
+  "children" : 
+  [
+    {
+      "name"     : "H1",
+      "children" : 
+      [
+        { 
+          "name"     : "H1-VideoGame",
+          "children" : 
+          [
+            {"name" : "百家樂"     , "size": 3938},
+            {"name" : "番攤"       , "size": 3812},
+            {"name" : "輪盤"       , "size": 6714},
+            {"name" : "骰子"       , "size": 743},
+            {"name" : "魚蝦蟹"     , "size": 6714},
+            {"name" : "龍虎"       , "size": 6714},
+            {"name" : "保險百家樂" , "size": 6714}
+          ]
+        }
+      ]
+    } ,
+    {
+      "name"     : "B櫃",
+      "children" : 
+      [
+        { 
+          "name"     : "B櫃-VideoGame",
+          "children" : 
+          [
+            {"name" : "百家樂"     , "size": 1938},
+            {"name" : "番攤"       , "size": 988},
+            {"name" : "輪盤"       , "size": 1112},
+            {"name" : "骰子"       , "size": 5566},
+            {"name" : "魚蝦蟹"     , "size": 1125},
+            {"name" : "龍虎"       , "size": 515},
+            {"name" : "保險百家樂" , "size": 5588}
+          ]
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,60 @@
+{
+  "name"     : "RG" ,
+  "children" : 
+  [
+    {
+      "name"     : "視訊遊戲" ,
+      "children" : 
+      [
+        {"name" : "百家樂"     , "size" : 5000} ,
+        {"name" : "番攤"       , "size" : 1000} ,
+        {"name" : "輪盤"       , "size" : 3000} ,
+        {"name" : "骰子"       , "size" : 2000} ,
+        {"name" : "魚蝦蟹"     , "size" : 1500} ,
+        {"name" : "龍虎"       , "size" : 4000} ,
+        {"name" : "保險百家樂" , "size" : 3500} 
+      ]
+    } ,
+    {
+      "name"     : "電子遊戲" ,
+      "children" : 
+      [
+        {
+          "name"     : "H1"  ,
+          "children" : 
+          [
+            {"name" : "黃金館" , "size" : 1300} ,
+            {"name" : "3D館"   , "size" : 1500} ,
+            {"name" : "Slot館" , "size" : 1800}
+          ]
+        } ,
+        {
+          "name"     : "B櫃" ,
+          "children" :
+          [
+            {"name" : "彩金館" , "size" : 2300} ,
+            {"name" : "歡樂館" , "size" : 1300}
+          ]
+        } ,
+        {"name" : "紅寶石" , "size" : 800}
+      ]
+    } ,
+    {
+      "name"     : "對戰遊戲" ,
+      "children" :
+      [
+        {"name" : "十三支"   , "size" : 200} ,
+        {"name" : "博八博九" , "size" : 100} ,
+        {"name" : "吹牛"     , "size" : 300} ,
+        {"name" : "魚蝦蟹"   , "size" : 200} ,
+        {"name" : "十點半"   , "size" : 80 } ,
+        {"name" : "德州撲克" , "size" : 500} ,
+        {"name" : "九雞"     , "size" : 100} ,
+        {"name" : "21點"     , "size" : 300} ,
+        {"name" : "二人麻將" , "size" : 180} ,
+        {"name" : "牌九"     , "size" : 60 } 
+      ]
+    }
+  ]
+}
+

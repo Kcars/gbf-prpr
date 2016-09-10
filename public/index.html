@@ -1,0 +1,456 @@
+<html>
+<head>
+    <!-- http://usebootstrap.com/preview/darkly/# -->
+    <meta charset="utf-8">
+    <title>力爭上歐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="darkly/theme/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="darkly/theme/usebootstrap.css">
+
+    <link href="./styles/c3.css" rel="stylesheet" type="text/css">
+     
+    <style>
+        ul {
+            padding-bottom:5px;
+        }
+
+        .code-mark {
+            margin-left : 10px ;
+        }
+
+        .con-body .col-md-3 {
+            min-height:450px ;
+        }
+
+        .list-group-item span {
+            margin-left : 10px;
+        }
+
+        .btn {
+            margin-bottom: 5px;
+        }
+
+        .chart {
+            height:100px;
+        }
+
+    </style>
+
+</head>
+<body>
+<p class="pmsg"></p>
+<div class="container-fluid">
+    <div class="row con-menu">
+        <div class="col-lg-5 con-btn-bar">
+            <h1>力爭上歐 [測試中] </h1> 
+            <span class="label label-success">Ver. 1.0.2</span>
+            <span class="label label-success online"></span>
+            <span class="label label-success">5 SEC</span>
+            <span class="label label-success">80 TWEET</span>
+            <span class="label label-success label-rc">GET: ---</span>
+            <span class="label label-success label-sc">STREAMING: ---</span>
+            <span class="label label-success ws-update-time"></span>
+            <span class="label label-warning ws-bad">Failed</span>
+        </div>
+        <div id="chart" class="col-lg-6 chart">
+        </div>
+    </div>
+    <hr/>
+    <div class="row con-toggle">
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg" t-type="1">風EX</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="2">火EX</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="3">水EX</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="4">土EX</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="5">光EX</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="6">暗EX</button>
+        </div>
+        
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg" t-type="10001">風HL</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="10002">火HL</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="10003">水HL</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="10004">土HL</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="10005">光HL</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="10006">暗HL</button>
+        </div>
+        
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg" t-type="10010">召喚石1</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="10020">召喚石2</button>
+        </div>
+
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg" t-type="12020">召喚石HL</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="10000">其他</button>
+        </div>
+        
+    </div>
+    <hr/>
+    <div class="row con-body">
+        <div class="col-md-4 list-10000">
+            <ul class="nav nav-pills">
+               <li><a>其他<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10000">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-1">
+            <ul class="nav nav-pills">
+               <li><a>風EX<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-1">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-2">
+           <ul class="nav nav-pills">
+               <li><a>火EX<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-2">
+            </ul>
+        </div> 
+
+        <div class="col-md-4 list-3">
+            <ul class="nav nav-pills">
+               <li><a>水EX<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-3">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-4">
+            <ul class="nav nav-pills">
+               <li><a>土EX<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-4">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-5">
+            <ul class="nav nav-pills">
+               <li><a>光EX<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-5">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-6">
+            <ul class="nav nav-pills">
+               <li><a>暗EX<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-6">
+            </ul>
+        </div> 
+
+        <div class="col-md-4 list-10001">
+            <ul class="nav nav-pills">
+               <li><a>風HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10001">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-10002">
+            <ul class="nav nav-pills">
+               <li><a>火HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10002">
+            </ul>
+        </div>
+        
+        <div class="col-md-4 list-10003">
+            <ul class="nav nav-pills">
+               <li><a>水HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10003">
+            </ul>
+        </div>
+        
+        <div class="col-md-4 list-10004">
+            <ul class="nav nav-pills">
+               <li><a>土HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10004">
+            </ul>
+        </div>
+        
+        <div class="col-md-4 list-10005">
+            <ul class="nav nav-pills">
+               <li><a>光HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10005">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-10006">
+            <ul class="nav nav-pills">
+               <li><a>暗HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10006">
+            </ul>
+        </div>
+        
+        <div class="col-md-4 list-10010">
+            <ul class="nav nav-pills">
+               <li><a>召喚石1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10010">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-10020">
+            <ul class="nav nav-pills">
+               <li><a>召喚石2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10020">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-12020">
+            <ul class="nav nav-pills">
+               <li><a>召喚石HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12020">
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="darkly/bootstrap/bootstrap.min.js"></script>
+<script src="darkly/bootstrap/usebootstrap.js"></script>
+
+
+<script src="./js/d3.js" charset="utf-8"></script>
+<script src="./js/c3.js"></script>
+
+<script>
+
+// "prpr" : [ { "kind" : "fr" , "code" : "qazwsx" , "ftime" : "10:18:20" , "by" : "twi" } ] ,
+
+//"mark" : [ "1:edcrfv" , "2:tgbyn" ] ,
+
+//1,2,3,4,5,6,10001,10006,10010,10020,10000
+/*
+var type1 = [ "風EX" , 1]  ;
+var type2 = [ "火EX" , 1]  ;
+var type3 = [ "水EX" , 1]  ;
+var type4 = [ "土EX" , 1]  ;
+var type5 = [ "光EX" , 1]  ;
+var type6 = [ "暗EX" , 1]  ;
+
+//var resource = [ type1 , type2 , type3 , type4 , type5 , type6 ] ;
+
+var chart = c3.generate({
+    data: 
+    {
+        columns: 
+        [
+            type1 , type2 , type3 , type4 , type5 , type6
+        ] , 
+        type: 'spline'
+    },
+    axis: 
+    {
+        x: 
+        {
+            type       : 'category',
+            categories : 
+            [
+                '0000' , '0100' , '0200' , '0300' , '0400' , '0500' , '0600' , '0700' ,
+                '0800' , '0900' , '1000' , '1100' , '1200' , '1300' , '1400' , '1500' ,
+                '1600' , '1700' , '1800' , '1900' , '2000' , '2100' , '2200' , '2300'
+            ]
+        }
+    },
+});*/
+
+function compare(a,b) {
+  if (a.ftime < b.ftime)
+    return -1;
+  if (a.ftime > b.ftime)
+    return 1;
+  return 0;
+}
+
+function doParsePrpr(list) {
+
+    /*var count1 = 0 ;
+    var count2 = 0 ;
+    var count3 = 0 ;
+    var count4 = 0 ;
+    var count5 = 0 ;
+    var count6 = 0 ;*/
+    
+    list.sort(compare) ;
+
+    list.forEach(function (element) {
+        var tt = element.kind ;
+        var lv = element.lv ;
+        var cc = element.code ;
+        var na = element.name ;
+        var ti = element.ftime ;
+        var ff = element.by ;
+
+       /* count1 = tt == 1 ? count1 + 1 : count1 ;
+        count2 = tt == 1 ? count2 + 1 : count2 ;
+        count3 = tt == 1 ? count3 + 1 : count3 ;
+        count4 = tt == 1 ? count4 + 1 : count4 ;
+        count5 = tt == 1 ? count5 + 1 : count5 ;
+        count6 = tt == 1 ? count6 + 1 : count6 ;*/
+        
+        appendCode(tt , cc , na , lv , ti , ff) ;
+    } ) ;
+
+    /*type1.push(count1) ;
+    type2.push(count2) ;
+    type3.push(count3) ;
+    type4.push(count4) ;
+    type5.push(count5) ;
+    type6.push(count6) ;
+
+    chart.load({
+        columns: 
+        [
+            type1 , type2 , type3 , type4 , type5 , type6
+        ]
+    });*/
+}
+
+function doParseMark(list) {
+    list.forEach(function (element) {
+        var info = element.split(":") ;
+        var tt   = info[0] ;
+        var cc   = info[1] ;
+
+        markCode(tt , cc) ;
+    } ) ;
+} 
+
+function doTrackTooOldCode() {
+    var targets = $(".list-group-item").find(".badge") ; // span
+ 
+    targets.each(function(index , element) { 
+        /*var tt  = $(element).text().split(":")[0] + $(element).text().split(":")[1] ;
+        var itt = parseInt(tt) ;
+        
+        var ct  = new Date().getHours().toString() + new Date().getMinutes().toString() ;
+        var ict = parseInt(ct) ;
+
+        var isOld = ict - itt >= 1 ;*/
+
+        //console.log("tt:" + tt + " , ct:" + ct) ;
+        if( true ) { $( $(element).parent().get(0) ).fadeOut(500 , function() {
+            //console.log("remove!!") ;
+            this.remove() ;
+        })}
+    })
+}
+
+function doParseTime ( val ) {
+    val = new Date(val) ;
+    return (val.getHours()   < 10 ? "0" + val.getHours()   : val.getHours()   ) + ":" +
+           (val.getMinutes() < 10 ? "0" + val.getMinutes() : val.getMinutes() ) + ":" +
+           (val.getSeconds() < 10 ? "0" + val.getSeconds() : val.getSeconds() ) ;
+}
+
+var ws  = new WebSocket("ws://prpr.pickoma.com:8080" , "echo-protocol") ;
+var tid = 0 ; 
+
+ws.onmessage = function(e) {
+      //console.log(e.data);
+      var rece = JSON.parse(e.data) ;
+      //console.log(rece) ;
+      doTrackTooOldCode() ;
+
+      if( rece.prpr != null && rece.prpr.length > 0 ) { doParsePrpr(rece.prpr) ; }
+      if( rece.mark != null && rece.mark.length > 0 ) { doParseMark(rece.mark) ; }
+
+      $(".ws-update-time").text( "UPDATE TIME: " + doParseTime(rece.info.lut) ) ;
+      $(".online").text(rece.info.connections + " ONLINE") ;
+      $(".ws-bad").text("") ;
+
+      $(".label-rc").text("REQUEST: " + rece.info.rc) ;
+      $(".label-sc").text("STREAMING: " + rece.info.sc) ;
+
+
+ //     if ( tid > 0) { clearTimeout(tid) ; }
+ 
+      //$(".pmsg").text( $(".pmsg").text() + "\r\n" + e.data ) ;
+    }
+
+ws.onclose = function (e) {
+    $(".ws-bad").text("Failed") ;
+    
+    /*setTimeout(function(target) {
+        console.log("reconnect...") ;
+        target = new WebSocket("ws://prpr.pickoma.com:8080" , "echo-protocol") ;
+    } , 5000 , ws) ;*/
+}
+
+/*
+setInterval(function(target) {
+    var sen = JSON.stringify({ "type" : "msg" , "content" : "hello i'am client" }) ;
+    target.send(sen) ;
+} , 5000 , ws);
+*/
+
+function appendCode (tt , cc , na , lv , ti , ff) {
+    /*var html = "<li class=\"list-group-item\"><span>" + cc + "</span><span>"+na+"</span><button type=\"button\" class=\"code-mark btn btn-warning btn-xs\">Mark</button><span class=\"badge\">" + ti + "</span></li>" ;*/
+
+    var lm = lv == "Lv100" || lv == "Lv110" || lv == "Lv120" || lv == "Lv150" ? "label-danger" : "label-info" ;
+
+    var re = ff == "streaming" ? "red" : "white" ;
+
+    //console.log(ff + " , " + re) ;
+    var html = "<li class=\"list-group-item\"><span>" + cc + "</span><span>"+na+"</span><span class=\"label " + lm + "\">" + lv + "</span><span class=\"badge\" style=\"color:"+re+"\">" + ti + "</span></li>" ;
+ 
+    $(".codelist-" + tt).prepend(html).hide().fadeIn(500) ;
+}
+
+function markCode (tt , cc) {
+     var items = $(".codelist-" + tt + " span:contains(" + cc + ")") ;
+     
+     items.each(function(index , element){
+        if (!$(element).parent().is("del") ) {
+            $($(element).parent().get(0)).addClass("code-marked") ;
+            $(element).wrap("<del>") ;
+        }
+     })
+}
+
+////////
+////////
+////////
+
+//$(".code-mark").on("click" , function(){
+/*$(document).on("click" , ".code-mark" , function () {
+    var parent  = $(this).parent().get(0)
+    var jparent = $(parent) ; // li
+    var sp      = $(jparent.find("span")[0]) ; // span
+ 
+    if(!sp.parent().is("del")) { jparent.addClass("code-marked") ; sp.wrap("<del>") ;}
+    
+}) ;*/
+
+$(".btn-tg").on("click" , function(){
+    var type = $(this).attr("t-type") ; // null?type:1 ???
+    $(".list-" + type).fadeToggle();
+})
+/*
+$(".btn-clear-marked").on("click" , function() {
+    $(".code-marked").fadeOut(500 , function() { this.remove() ; }) ;
+})
+
+$(document).bind('keyup', function(e) {
+    
+    if(e.keyCode == 99) { 
+        doTrackTooOldCode() ;
+    }
+}) ;*/
+    
+</script>
+</body>
+</html>
