@@ -11,19 +11,18 @@ var client  = new Twitter({
 console.log( process.env.TWITTER_CK ) ;
 
 var WebSocketServer = require('websocket').server ;
-var http            = require('http') ;
+var http            = require('https') ;
 
-var server = http.createServer( function( request , response ) {
-    console.log( ( new Date() ) + ' Received request for ' + request.url ) ;
-    
-    response.writeHead( 404 ) ;
-    
-    response.end() ;
-});
+var processRequest = function( req , res ) {
+        res.writeHead(200) ;
+        res.end("O_o?!");
+};
 
-server.listen( 8080 , function() {
-    console.log( (new Date() ) + ' Server is listening on port 8080' ) ;
-}) ;
+var server = http.createServer({
+            key  : fs.readFileSync( process.env.PRPR_KEY ) ,
+            cert : fs.readFileSync( process.env.PRPR_CER )
+
+} , processRequest ).listen( 8080 ) ;
 
 wsServer = new WebSocketServer({
     httpServer            : server ,

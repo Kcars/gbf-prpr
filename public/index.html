@@ -42,8 +42,8 @@
 <div class="container-fluid">
     <div class="row con-menu">
         <div class="col-lg-5 con-btn-bar">
-            <h1>力爭上歐 [測試中] </h1> 
-            <span class="label label-success">Ver. 1.0.2</span>
+            <h1>力爭上歐</h1> 
+            <span class="label label-success">Ver. 1.1.0</span>
             <span class="label label-success online"></span>
             <span class="label label-success">5 SEC</span>
             <span class="label label-success">80 TWEET</span>
@@ -356,7 +356,7 @@ function doParseTime ( val ) {
            (val.getSeconds() < 10 ? "0" + val.getSeconds() : val.getSeconds() ) ;
 }
 
-var ws  = new WebSocket("ws://prpr.pickoma.com:8080" , "echo-protocol") ;
+var ws  = new WebSocket("wss://prpr.pickoma.com:8080" , "echo-protocol") ;
 var tid = 0 ; 
 
 ws.onmessage = function(e) {
