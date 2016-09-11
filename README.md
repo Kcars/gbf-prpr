@@ -4,7 +4,7 @@ gbf-prpr
 使用 Twitter API 取得 GBF 救援ID 並顯示的工具網頁
 
 demo:
-http://prpr.pickoma.com/
+https://prpr.pickoma.com/
 
 # 專案由來
 
@@ -34,9 +34,6 @@ http://prpr.pickoma.com/
 
 # 預計~~(放棄)~~功能
 
-- HTTPS
-- HTTP/2 
-- Secure WebSocket
 - 撈wiki上的救援ID?
 - 繪製統計圖表 (每小時的救援數量增減、Twitter帳號的救援數量比較 ... etc )
 
