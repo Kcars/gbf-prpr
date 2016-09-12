@@ -356,7 +356,7 @@ function doParseTime ( val ) {
            (val.getSeconds() < 10 ? "0" + val.getSeconds() : val.getSeconds() ) ;
 }
 
-var ws  = new WebSocket("wss://prpr.pickoma.com:8080" , "echo-protocol") ;
+var ws  = new WebSocket("wss://prpr.pickoma.com:8443" , "echo-protocol") ;
 var tid = 0 ; 
 
 ws.onmessage = function(e) {

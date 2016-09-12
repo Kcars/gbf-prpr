@@ -22,7 +22,7 @@ var server = http.createServer({
             key  : fs.readFileSync( process.env.PRPR_KEY ) ,
             cert : fs.readFileSync( process.env.PRPR_CER )
 
-} , processRequest ).listen( 8080 ) ;
+} , processRequest ).listen( 8443 ) ;
 
 wsServer = new WebSocketServer({
     httpServer            : server ,
@@ -290,12 +290,13 @@ setInterval(function(target) {
 
     target.twi.get("search/tweets" , {"q" : "参戦ID" , "count" : 80} , function(error, tweets, response){
 
-    var counter = [] ;
+        var counter = [] ;
 
-        tweets.statuses.forEach(function(item){
-            target.doParseTweet(item , "request") ;
-        })
-
+        if ( tweets != null && tweets.statuses != null ) {
+            tweets.statuses.forEach(function(item){
+                target.doParseTweet(item , "request") ;
+            })
+        }
     })
 
     target.doWall() ;
