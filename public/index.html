@@ -43,7 +43,7 @@
     <div class="row con-menu">
         <div class="col-lg-5 con-btn-bar">
             <h1>力爭上歐</h1> 
-            <span class="label label-success">Ver. 1.1.0</span>
+            <span class="label label-success">Ver. 1.1.1</span>
             <span class="label label-success online"></span>
             <span class="label label-success">5 SEC</span>
             <span class="label label-success">80 TWEET</span>
@@ -333,17 +333,18 @@ function doTrackTooOldCode() {
     var targets = $(".list-group-item").find(".badge") ; // span
  
     targets.each(function(index , element) { 
-        /*var tt  = $(element).text().split(":")[0] + $(element).text().split(":")[1] ;
+        var tt  = $(element).text().split(":")[0] + $(element).text().split(":")[1] ;
         var itt = parseInt(tt) ;
         
         var ct  = new Date().getHours().toString() + new Date().getMinutes().toString() ;
         var ict = parseInt(ct) ;
 
-        var isOld = ict - itt >= 1 ;*/
+        var isOld = ict - itt >= 5 ;
 
-        //console.log("tt:" + tt + " , ct:" + ct) ;
-        if( true ) { $( $(element).parent().get(0) ).fadeOut(500 , function() {
-            //console.log("remove!!") ;
+        
+        if( isOld ) { $( $(element).parent().get(0) ).fadeOut(500 , function() {
+            console.log("too-old-remove") ;
+            console.log("tt:" + tt + " , ct:" + ct ) ;
             this.remove() ;
         })}
     })
@@ -398,16 +399,46 @@ setInterval(function(target) {
 */
 
 function appendCode (tt , cc , na , lv , ti , ff) {
-    /*var html = "<li class=\"list-group-item\"><span>" + cc + "</span><span>"+na+"</span><button type=\"button\" class=\"code-mark btn btn-warning btn-xs\">Mark</button><span class=\"badge\">" + ti + "</span></li>" ;*/
+    
+    // codelist-10000
 
     var lm = lv == "Lv100" || lv == "Lv110" || lv == "Lv120" || lv == "Lv150" ? "label-danger" : "label-info" ;
 
     var re = ff == "streaming" ? "red" : "white" ;
 
     //console.log(ff + " , " + re) ;
-    var html = "<li class=\"list-group-item\"><span>" + cc + "</span><span>"+na+"</span><span class=\"label " + lm + "\">" + lv + "</span><span class=\"badge\" style=\"color:"+re+"\">" + ti + "</span></li>" ;
+    var html = "<li class=\"list-group-item\"><span class=\"code\">" + cc + "</span><span>"+na+"</span><span class=\"label " + lm + "\">" + lv + "</span><span class=\"badge\" style=\"color:"+re+"\">" + ti + "</span></li>" ;
  
-    $(".codelist-" + tt).prepend(html).hide().fadeIn(500) ;
+    //console.log ( $(".codelist-" + tt).children(".list-group-item").children(".code").text() ) ;
+ 
+    var alist     = [] ;
+
+    $(".codelist-" + tt).children(".list-group-item").children(".code").each(function(index , element) {
+        var incode = $(element).text() ;
+        alist.push(incode) ;
+
+        if ( index > 4 ) {
+            //$(element).parent().remove() ;
+            $(element).parent().fadeOut(500 , function() {
+                this.remove() ;
+            }) ;
+
+            //console.log("over remove") ;
+        }
+    })
+
+    var alreadyIn = alist.indexOf( cc ) == -1 ? false : true ;
+
+    if ( !alreadyIn ) {
+        //$(".codelist-" + tt).prepend(html).fadeIn(500) ;
+
+        $(html).prependTo(".codelist-" + tt).hide().fadeIn(500) ;
+
+        //console.log( tt + " --- append " ) ;
+
+    } else {
+        //console.log( tt + " --- almost in " ) ;
+    }
 }
 
 function markCode (tt , cc) {
