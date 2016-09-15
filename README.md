@@ -21,7 +21,7 @@ https://prpr.pickoma.com/
 ```
  (websocket support)
 [ie10,firefox,chrome]                              [gce]
-       Browser <-------- CloudFlare <-------> WebSocket Server @ 8080 (NodeJS)
+       Browser <-------- CloudFlare <-------> WebSocket Server @ 8843 (NodeJS)
                                               Web Server       @ 80   (Nginx)
 ```
 
@@ -57,3 +57,4 @@ https://prpr.pickoma.com/
 # 其它
 
 ~~誰可以去跟官方說救援tweet可以弄個英文關鍵字嗎~~
+

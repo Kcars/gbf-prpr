@@ -43,7 +43,7 @@
     <div class="row con-menu">
         <div class="col-lg-5 con-btn-bar">
             <h1>力爭上歐</h1> 
-            <span class="label label-success">Ver. 1.1.1</span>
+            <span class="label label-success">Ver. 1.1.2</span>
             <span class="label label-success online"></span>
             <span class="label label-success">5 SEC</span>
             <span class="label label-success">80 TWEET</span>
@@ -57,7 +57,15 @@
     </div>
     <hr/>
     <div class="row con-toggle">
-        <div class="col-lg-3 con-btn-bar">
+        
+        <div class="col-lg-2 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg" t-type="all">全部切換</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="all-show">全部顯示</button>
+            <button type="button" class="btn btn-primary btn-tg" t-type="all-hide">全部隱藏</button>
+            
+        </div>
+
+        <div class="col-lg-2 con-btn-bar">
             <button type="button" class="btn btn-primary btn-tg" t-type="1">風EX</button>
             <button type="button" class="btn btn-primary btn-tg" t-type="2">火EX</button>
             <button type="button" class="btn btn-primary btn-tg" t-type="3">水EX</button>
@@ -66,7 +74,7 @@
             <button type="button" class="btn btn-primary btn-tg" t-type="6">暗EX</button>
         </div>
         
-        <div class="col-lg-3 con-btn-bar">
+        <div class="col-lg-2 con-btn-bar">
             <button type="button" class="btn btn-primary btn-tg" t-type="10001">風HL</button>
             <button type="button" class="btn btn-primary btn-tg" t-type="10002">火HL</button>
             <button type="button" class="btn btn-primary btn-tg" t-type="10003">水HL</button>
@@ -75,12 +83,12 @@
             <button type="button" class="btn btn-primary btn-tg" t-type="10006">暗HL</button>
         </div>
         
-        <div class="col-lg-3 con-btn-bar">
+        <div class="col-lg-2 con-btn-bar">
             <button type="button" class="btn btn-primary btn-tg" t-type="10010">召喚石1</button>
             <button type="button" class="btn btn-primary btn-tg" t-type="10020">召喚石2</button>
         </div>
 
-        <div class="col-lg-3 con-btn-bar">
+        <div class="col-lg-2 con-btn-bar">
             <button type="button" class="btn btn-primary btn-tg" t-type="12020">召喚石HL</button>
             <button type="button" class="btn btn-primary btn-tg" t-type="10000">其他</button>
         </div>
@@ -88,7 +96,7 @@
     </div>
     <hr/>
     <div class="row con-body">
-        <div class="col-md-4 list-10000">
+        <div class="col-md-4 list-type list-10000">
             <ul class="nav nav-pills">
                <li><a>其他<span class="badge">0</span></a></li>
             </ul>
@@ -96,7 +104,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-1">
+        <div class="col-md-4 list-type list-1">
             <ul class="nav nav-pills">
                <li><a>風EX<span class="badge">0</span></a></li>
             </ul>
@@ -104,7 +112,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-2">
+        <div class="col-md-4 list-type list-2">
            <ul class="nav nav-pills">
                <li><a>火EX<span class="badge">0</span></a></li>
             </ul>
@@ -112,7 +120,7 @@
             </ul>
         </div> 
 
-        <div class="col-md-4 list-3">
+        <div class="col-md-4 list-type list-3">
             <ul class="nav nav-pills">
                <li><a>水EX<span class="badge">0</span></a></li>
             </ul>
@@ -120,7 +128,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-4">
+        <div class="col-md-4 list-type list-4">
             <ul class="nav nav-pills">
                <li><a>土EX<span class="badge">0</span></a></li>
             </ul>
@@ -128,7 +136,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-5">
+        <div class="col-md-4 list-type list-5">
             <ul class="nav nav-pills">
                <li><a>光EX<span class="badge">0</span></a></li>
             </ul>
@@ -136,7 +144,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-6">
+        <div class="col-md-4 list-type list-6">
             <ul class="nav nav-pills">
                <li><a>暗EX<span class="badge">0</span></a></li>
             </ul>
@@ -144,7 +152,7 @@
             </ul>
         </div> 
 
-        <div class="col-md-4 list-10001">
+        <div class="col-md-4 list-type list-10001">
             <ul class="nav nav-pills">
                <li><a>風HL<span class="badge">0</span></a></li>
             </ul>
@@ -152,7 +160,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-10002">
+        <div class="col-md-4 list-type list-10002">
             <ul class="nav nav-pills">
                <li><a>火HL<span class="badge">0</span></a></li>
             </ul>
@@ -160,7 +168,7 @@
             </ul>
         </div>
         
-        <div class="col-md-4 list-10003">
+        <div class="col-md-4 list-type list-10003">
             <ul class="nav nav-pills">
                <li><a>水HL<span class="badge">0</span></a></li>
             </ul>
@@ -168,7 +176,7 @@
             </ul>
         </div>
         
-        <div class="col-md-4 list-10004">
+        <div class="col-md-4 list-type list-10004">
             <ul class="nav nav-pills">
                <li><a>土HL<span class="badge">0</span></a></li>
             </ul>
@@ -176,7 +184,7 @@
             </ul>
         </div>
         
-        <div class="col-md-4 list-10005">
+        <div class="col-md-4 list-type list-10005">
             <ul class="nav nav-pills">
                <li><a>光HL<span class="badge">0</span></a></li>
             </ul>
@@ -184,7 +192,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-10006">
+        <div class="col-md-4 list-type list-10006">
             <ul class="nav nav-pills">
                <li><a>暗HL<span class="badge">0</span></a></li>
             </ul>
@@ -192,7 +200,7 @@
             </ul>
         </div>
         
-        <div class="col-md-4 list-10010">
+        <div class="col-md-4 list-type list-10010">
             <ul class="nav nav-pills">
                <li><a>召喚石1<span class="badge">0</span></a></li>
             </ul>
@@ -200,7 +208,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-10020">
+        <div class="col-md-4 list-type list-10020">
             <ul class="nav nav-pills">
                <li><a>召喚石2<span class="badge">0</span></a></li>
             </ul>
@@ -208,7 +216,7 @@
             </ul>
         </div>
 
-        <div class="col-md-4 list-12020">
+        <div class="col-md-4 list-type list-12020">
             <ul class="nav nav-pills">
                <li><a>召喚石HL<span class="badge">0</span></a></li>
             </ul>
@@ -468,7 +476,25 @@ function markCode (tt , cc) {
 
 $(".btn-tg").on("click" , function(){
     var type = $(this).attr("t-type") ; // null?type:1 ???
-    $(".list-" + type).fadeToggle();
+
+    switch ( type ) {
+        case "all" :
+            $(".list-type").fadeToggle();
+        break ;
+
+        case "all-show" :
+            $(".list-type").hide().fadeIn(500) ;
+        break ;
+
+        case "all-hide" :
+            $(".list-type").fadeOut(500) ;// , function() { this.remove() ; }) ;
+        break ;
+
+        default : 
+            $(".list-" + type).fadeToggle();
+        break ;
+    }
+    
 })
 /*
 $(".btn-clear-marked").on("click" , function() {
