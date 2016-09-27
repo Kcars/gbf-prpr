@@ -15,10 +15,21 @@
     <link rel="stylesheet" href="darkly/theme/usebootstrap.css">
 
     <link href="./styles/c3.css" rel="stylesheet" type="text/css">
-     
+   
+    <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet"> 
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+
     <style>
         ul {
             padding-bottom:5px;
+        }
+
+        .code {
+            font-family: 'Cousine', monospace;
+        }
+
+        .title {
+            font-family: 'Noto Sans Japanese', sans-serif;
         }
 
         .code-mark {
@@ -50,7 +61,7 @@
     <div class="row con-menu">
         <div class="col-lg-6 con-btn-bar">
             <h1>力爭上歐</h1> 
-            <span class="label label-success">Ver. 1.1.4</span>
+            <span class="label label-success">Ver. 1.1.5</span>
             <span class="label label-success online"></span>
             <span class="label label-success">5 SEC</span>
             <span class="label label-success">80 TWEET</span>
@@ -296,8 +307,6 @@ function doParsePrpr(list) {
         }
     })
     } )
-
-    
 }
 
 function doParseMark(list) {
@@ -370,7 +379,7 @@ function appendCode (tt , cc , na , lv , ti , ff , alist) {
 
     var re = ff == "streaming" ? "red" : "white" ;
 
-    var html = "<li class=\"list-group-item\"><span class=\"code\">" + cc + "</span><span>"+na+"</span><span class=\"label " + lm + "\">" + lv + "</span><span class=\"badge\" style=\"color:"+re+"\">" + ti + "</span></li>" ;
+    var html = "<li class=\"list-group-item\"><span class=\"code\">" + cc + "</span> <span class=\"label " + lm + "\">" + lv + "</span><span class=\"title\">"+na+"</span><span class=\"badge\" style=\"color:"+re+"\">" + ti + "</span></li>" ;
  
     var alreadyIn = alist.indexOf( cc ) == -1 ? false : true ;
 
