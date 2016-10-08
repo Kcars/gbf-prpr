@@ -60,22 +60,22 @@ wsServer.getType =  function getType(ll , na) {
         if ( na == "シュヴァリエ・マグナ" )     { result = 10005 ; }
         if ( na == "セレスト・マグナ" )         { result = 10006 ; }
         
-        if ( na == "フラム＝グラス" )          { result = 10010 ; } // 10007
-        if ( na == "マキュラ・マリウス" )      { result = 10010 ; } // 10008
-        if ( na == "メドゥーサ" )              { result = 10010 ; } // 10009
-        if ( na == "ナタク" )                  { result = 10010 ; } // 10010
-        if ( na == "アポロン" )                { result = 10010 ; } // 10011
-        if ( na == "Dエンジェル・オリヴィエ" ) { result = 10010 ; } // 10012
+        if ( na == "フラム＝グラス" )          { result = 10011 ; } 
+        if ( na == "マキュラ・マリウス" )      { result = 10012 ; } 
+        if ( na == "メドゥーサ" )              { result = 10013 ; } 
+        if ( na == "ナタク" )                  { result = 10014 ; } 
+        if ( na == "アポロン" )                { result = 10015 ; } 
+        if ( na == "Dエンジェル・オリヴィエ" ) { result = 10016 ; } 
 
-        if ( na == "グラニ" )                  { result = 10020 ; }
-        if ( na == "オーディン" )              { result = 10020 ; }
-        if ( na == "リッチ" )                  { result = 10020 ; }
-        if ( na == "アテナ" )                  { result = 10020 ; }
-        if ( na == "バアル" )                  { result = 10020 ; }
-        if ( na == "ガルーダ" )                { result = 10020 ; }
+        if ( na == "グラニ" )                  { result = 10021 ; }
+        if ( na == "オーディン" )              { result = 10022 ; }
+        if ( na == "リッチ" )                  { result = 10023 ; }
+        if ( na == "アテナ" )                  { result = 10024 ; }
+        if ( na == "バアル" )                  { result = 10025 ; }
+        if ( na == "ガルーダ" )                { result = 10026 ; }
     }
  
-    if ( ll == "Lv120") {
+    if ( ll == "Lv120" ) {
 
         result = 10000 ;
 
@@ -100,7 +100,29 @@ wsServer.getType =  function getType(ll , na) {
     }
 
     if ( ll == "Lv150" ) { result = 10000 ; }
-    
+
+    if ( ll == "Lv100" && na == "プロトバハムート" ) { result = 10088 ; }
+    if ( ll == "Lv150" && na == "プロトバハムート" ) { result = 15088 ; }
+
+    if ( na == "ジ・オーダー・グランデ" ) { result = 10099 ; }
+
+    if ( na == "ギルガメッシュ" ) { result = 12030 ; }
+    if ( na == "プロメテウス"   ) { result = 12030 ; }
+    if ( na == "カー・オン"     ) { result = 12030 ; }
+
+    if ( na == "玄武" ) { result = 6011 } ;
+    if ( na == "青竜" ) { result = 6012 } ;
+    if ( na == "白虎" ) { result = 6013 } ;
+    if ( na == "朱雀" ) { result = 6014 } ;
+
+    if ( na == "ネプチューン" ) { result = 9011 ; }
+    if ( na == "ゼピュロス"   ) { result = 9012 ; }
+    if ( na == "ティターン"   ) { result = 9013 ; }
+    if ( na == "アグニス"     ) { result = 9014 ; }
+
+    if ( na == "黄龍"   ) { result = 10031 ; }
+    if ( na == "黒麒麟" ) { result = 10032 ; }
+
     return result ;
 }
 
@@ -288,7 +310,7 @@ setInterval(function(target) {
 		if(  element.connected ) { element.sendUTF(outputStr) ; } 
 	})
 
-    target.twi.get("search/tweets" , {"q" : "参戦ID" , "count" : 80} , function(error, tweets, response){
+    target.twi.get("search/tweets" , { "q" : "参戦ID" , "count" : 100 } , function(error, tweets, response){
 
         var counter = [] ;
 

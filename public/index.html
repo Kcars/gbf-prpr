@@ -17,7 +17,7 @@
     <link href="./styles/c3.css" rel="stylesheet" type="text/css">
    
     <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet"> 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
 
     <style>
         ul {
@@ -61,10 +61,10 @@
     <div class="row con-menu">
         <div class="col-lg-6 con-btn-bar">
             <h1>力爭上歐</h1> 
-            <span class="label label-success">Ver. 1.1.5</span>
+            <span class="label label-success">Ver. 1.1.8</span>
             <span class="label label-success online"></span>
             <span class="label label-success">5 SEC</span>
-            <span class="label label-success">80 TWEET</span>
+            <span class="label label-success">100 TWEET</span>
             <span class="label label-success label-rc">GET: ---</span>
             <span class="label label-success label-sc">STREAMING: ---</span>
             <span class="label label-success ws-update-time"></span>
@@ -77,44 +77,111 @@
     <div class="row con-toggle">
         
         <div class="col-lg-2 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg" t-type="all">全部切換</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="all-show">全部顯示</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="all-hide">全部隱藏</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="all">全部切換</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="all-show">全部顯示</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="all-hide">全部隱藏</button>
             
         </div>
 
-        <div class="col-lg-2 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg" t-type="1">風EX</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="2">火EX</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="3">水EX</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="4">土EX</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="5">光EX</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="6">暗EX</button>
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="1">風EX</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="2">火EX</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="3">水EX</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="4">土EX</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="5">光EX</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6">暗EX</button>
         </div>
         
-        <div class="col-lg-2 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg" t-type="10001">風HL</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="10002">火HL</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="10003">水HL</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="10004">土HL</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="10005">光HL</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="10006">暗HL</button>
-        </div>
-        
-        <div class="col-lg-2 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg" t-type="10010">召喚石1</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="10020">召喚石2</button>
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10001">風HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10002">火HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10003">水HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10004">土HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10005">光HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10006">暗HL</button>
         </div>
 
-        <div class="col-lg-2 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg" t-type="12020">召喚石HL</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="10000">其他1</button>
-            <button type="button" class="btn btn-primary btn-tg" t-type="999">其他2</button>
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10010">召喚石1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10020">召喚石2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12020">召喚石HL</button>
+        </div>
+    <!--
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10011">火召1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10012">水召1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10013">土召1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10014">風召1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10015">光召1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10016">暗召1</button>
+        </div>
+    -->
+    <!--  
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10021">火召2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10022">水召2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10023">土召2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10024">風召2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10025">光召2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10026">暗召2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12021">火召2HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12022">水召2HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12023">土召2HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12024">風召2HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12025">光召2HL</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12026">暗召2HL</button>
+        </div>
+    -->  
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6011">北玄1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6012">東青1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6013">西白1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6014">南朱1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9011">北玄2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9012">東青2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9013">西白2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9014">南朱2</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10031">黄龍</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10032">黒麒麟</button>
+        </div>
+
+        <div class="col-lg-3 con-btn-bar">
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10088">小巴</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="15088">大巴</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10099">丁丁</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12030">解放用</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10000">其他1</button>
+            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="999">其他2</button>
         </div>
         
     </div>
     <hr/>
     <div class="row con-body">
+        
+        <div class="col-md-4 list-type list-10088">
+            <ul class="nav nav-pills">
+               <li><a>小巴<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10088">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-15088">
+            <ul class="nav nav-pills">
+               <li><a>大巴<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-15088">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10099">
+            <ul class="nav nav-pills">
+               <li><a>丁丁<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10099">
+            </ul>
+        </div>
+
         <div class="col-md-4 list-type list-10000">
             <ul class="nav nav-pills">
                <li><a>其他1<span class="badge">0</span></a></li>
@@ -128,6 +195,14 @@
                <li><a>其他2<span class="badge">0</span></a></li>
             </ul>
             <ul class="list-group codelist-999">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-12030">
+            <ul class="nav nav-pills">
+               <li><a>解放用<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12030">
             </ul>
         </div>
 
@@ -226,7 +301,9 @@
             <ul class="list-group codelist-10006">
             </ul>
         </div>
-        
+
+        <!-- mark -->
+
         <div class="col-md-4 list-type list-10010">
             <ul class="nav nav-pills">
                <li><a>召喚石1<span class="badge">0</span></a></li>
@@ -235,6 +312,57 @@
             </ul>
         </div>
 
+    <!--  
+        <div class="col-md-4 list-type list-10011">
+            <ul class="nav nav-pills">
+               <li><a>火召1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10011">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10012">
+            <ul class="nav nav-pills">
+               <li><a>水召1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10012">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10013">
+            <ul class="nav nav-pills">
+               <li><a>土召1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10013">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10014">
+            <ul class="nav nav-pills">
+               <li><a>風召1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10014">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10015">
+            <ul class="nav nav-pills">
+               <li><a>光召1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10015">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10016">
+            <ul class="nav nav-pills">
+               <li><a>暗召1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10016">
+            </ul>
+        </div>
+    -->
+        <!-- mark -->
+
         <div class="col-md-4 list-type list-10020">
             <ul class="nav nav-pills">
                <li><a>召喚石2<span class="badge">0</span></a></li>
@@ -242,6 +370,56 @@
             <ul class="list-group codelist-10020">
             </ul>
         </div>
+    <!--
+        <div class="col-md-4 list-type list-10021">
+            <ul class="nav nav-pills">
+               <li><a>火召2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10021">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10022">
+            <ul class="nav nav-pills">
+               <li><a>水召2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10012">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10023">
+            <ul class="nav nav-pills">
+               <li><a>土召2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10023">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10024">
+            <ul class="nav nav-pills">
+               <li><a>風召2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10024">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10025">
+            <ul class="nav nav-pills">
+               <li><a>光召2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10025">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10026">
+            <ul class="nav nav-pills">
+               <li><a>暗召2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10026">
+            </ul>
+        </div>
+    -->
+        <!-- mark -->
 
         <div class="col-md-4 list-type list-12020">
             <ul class="nav nav-pills">
@@ -250,6 +428,142 @@
             <ul class="list-group codelist-12020">
             </ul>
         </div>
+    <!--
+        <div class="col-md-4 list-type list-12021">
+            <ul class="nav nav-pills">
+               <li><a>火召2HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12021">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-12022">
+            <ul class="nav nav-pills">
+               <li><a>水召2HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12012">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-12023">
+            <ul class="nav nav-pills">
+               <li><a>土召2HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12023">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-12024">
+            <ul class="nav nav-pills">
+               <li><a>風召2HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12024">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-12025">
+            <ul class="nav nav-pills">
+               <li><a>光召2HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12025">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-12026">
+            <ul class="nav nav-pills">
+               <li><a>暗召2HL<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-12026">
+            </ul>
+        </div>
+    -->
+
+        <!-- mark --> 
+
+        <div class="col-md-4 list-type list-6011">
+            <ul class="nav nav-pills">
+               <li><a>北玄1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-6011">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-6012">
+            <ul class="nav nav-pills">
+               <li><a>東青1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-6012">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-6013">
+            <ul class="nav nav-pills">
+               <li><a>西白1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-6013">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-6014">
+            <ul class="nav nav-pills">
+               <li><a>南朱1<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-6014">
+            </ul>
+        </div>
+
+        <!-- mark -->
+
+        <div class="col-md-4 list-type list-9011">
+            <ul class="nav nav-pills">
+               <li><a>北玄2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-9011">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-9012">
+            <ul class="nav nav-pills">
+               <li><a>東青2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-9012">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-9013">
+            <ul class="nav nav-pills">
+               <li><a>西白2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-9013">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-9014">
+            <ul class="nav nav-pills">
+               <li><a>南朱2<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-9014">
+            </ul>
+        </div>
+
+        <!-- mark -->
+
+        <div class="col-md-4 list-type list-10031">
+            <ul class="nav nav-pills">
+               <li><a>黄龍<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10031">
+            </ul>
+        </div>
+
+        <div class="col-md-4 list-type list-10032">
+            <ul class="nav nav-pills">
+               <li><a>黒麒麟<span class="badge">0</span></a></li>
+            </ul>
+            <ul class="list-group codelist-10032">
+            </ul>
+        </div>
+        
     </div>
 </div>
 
@@ -300,7 +614,7 @@ function doParsePrpr(list) {
 
     typeList.forEach( function ( val ) { 
         $(".codelist-" + val).children(".list-group-item").children(".code").each(function(index , element) {
-        if ( index > 4 ) {
+        if ( index > 5 ) {
             $(element).parent().fadeOut(500 , function() {
                 this.remove() ;
             }) ;
@@ -320,7 +634,7 @@ function doParseMark(list) {
 } 
 
 function doTrackTooOldCode() {
-    var targets = $(".list-group-item").find(".badge") ; // span
+    var targets = $(".list-group-item").find(".badge") ;
  
     targets.each(function(index , element) { 
         var tt  = $(element).text().split(":")[0] + $(element).text().split(":")[1] ;
@@ -333,8 +647,6 @@ function doTrackTooOldCode() {
 
         
         if( isOld ) { $( $(element).parent().get(0) ).fadeOut(500 , function() {
-            console.log("too-old-remove") ;
-            console.log("tt:" + tt + " , ct:" + ct ) ;
             this.remove() ;
         })}
     })
@@ -367,6 +679,7 @@ ws.onmessage = function(e) {
 
 ws.onclose = function (e) {
     $(".ws-bad").text("Failed") ;
+    notifyMe( "與伺服器斷線，請重新整理頁面" ) ;
     
     /*setTimeout(function(target) {
         console.log("reconnect...") ;
@@ -375,7 +688,7 @@ ws.onclose = function (e) {
 }
 
 function appendCode (tt , cc , na , lv , ti , ff , alist) {
-    var lm = lv == "Lv100" || lv == "Lv110" || lv == "Lv120" || lv == "Lv150" ? "label-danger" : "label-info" ;
+    var lm = lv == "Lv100" || lv == "Lv110" || lv == "Lv120" || lv == "Lv150" ? "label-warning" : "label-info" ; lm = lv == "Lv120" || lv == "Lv150" ? "label-danger" : lm ;
 
     var re = ff == "streaming" ? "red" : "white" ;
 
@@ -385,6 +698,7 @@ function appendCode (tt , cc , na , lv , ti , ff , alist) {
 
     if ( !alreadyIn ) {
         $(html).prependTo(".codelist-" + tt).hide().fadeIn(500) ;
+        if ( tt == 10088 || tt == 10099 ) { notifyMe( na ) ; }
     } else {
     }
 }
@@ -405,7 +719,7 @@ function markCode (tt , cc) {
 ////////
 
 $(".btn-tg").on("click" , function(){
-    var type = $(this).attr("t-type") ; // null?type:1 ???
+    var type = $(this).attr("t-type") ;
 
     switch ( type ) {
         case "all" :
@@ -417,16 +731,55 @@ $(".btn-tg").on("click" , function(){
         break ;
 
         case "all-hide" :
-            $(".list-type").fadeOut(500) ;// , function() { this.remove() ; }) ;
+            $(".list-type").fadeOut(500) ;
         break ;
 
         default : 
             $(".list-" + type).fadeToggle();
         break ;
     }
-    
 })
+
+function initView() {
+    var info = gd("show") ;
+    var list = info.split(",") ;
+    if( list.length > 0 ) {
+        $(".list-type").fadeOut(500) ;
+        list.forEach( function( element ) {
+            $(".list-" + element).fadeToggle();
+        })
+    }
+}
+
+function notifyMe( val ) {
+  if (!("Notification" in window)) {
+    alert("This browser does not support desktop notification");
+  }
+
+  else if (Notification.permission === "granted") {
+    var notification = new Notification(val);
+  }
+
+  else if (Notification.permission !== 'denied') {
+    Notification.requestPermission(function (permission) {
+      if (permission === "granted") {
+        var notification = new Notification(val);
+      }
+    });
+  }
+}
+
+function gd( name , url ) {
+    if (!url) url = location.href;
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( url );
+    return results == null ? null : results[1];
+}
     
+initView() ;
+
 </script>
 </body>
 </html>
