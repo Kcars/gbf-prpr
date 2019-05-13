@@ -1,785 +1,120 @@
+<!DOCTYPE html>
 <html>
+
 <head>
     <!-- http://usebootstrap.com/preview/darkly/# -->
-    <title>力爭上歐</title>
+    <!-- http://dddfont.com/2018/07/24/ma239_2/ -->
+    <title>ペロペロ(x)</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="keywords"           content="gbf">
-    <meta property="og:title"       content="力爭上歐"/>
-    <meta property="og:type"        content="website"/>
-    <meta property="og:url"         content="https://prpr.pickoma.com"/>
-    <meta property="og:site_name"   content="力爭上歐"/>
-    <meta name="viewport"           content="width=device-width, initial-scale=1">
-    
+    <meta name="keywords" content="gbf,グラブル,グランブルーファンタジー,碧藍幻想">
+    <meta name="description" content="GBF twitter救援ID查詢">
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Kcars" />
+    <meta name="twitter:creator" content="@Kcars" />
+
+    <meta property="og:url" content="https://prpr.pickoma.com" />
+    <meta property="og:title" content="prpr(x)" />
+    <meta property="og:type" content="site" />
+    <meta property="og:description" content="GBF twitter救援ID查詢" />
+    <meta property="og:image" content="https://prpr.pickoma.com/images/icons/icon-256x256.png" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="prpr(x)">
+
+    <meta name="msapplication-TileImage" content="images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#888888">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="images/icons/icon-152x152.png">
+    <link rel="shortcut icon" type="image/png" href="/images/icons/icon-16x16.png" />
+    <link rel="manifest" href="/manifest.json">
+
+    <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
     <link rel="stylesheet" href="darkly/theme/bootstrap.css" media="screen">
     <link rel="stylesheet" href="darkly/theme/usebootstrap.css">
-
-    <link href="./styles/c3.css" rel="stylesheet" type="text/css">
-   
-    <link href="https://fonts.googleapis.com/css?family=Cousine" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
-
-    <style>
-        ul {
-            padding-bottom:5px;
-        }
-
-        .code {
-            font-family: 'Cousine', monospace;
-        }
-
-        .title {
-            font-family: 'Noto Sans Japanese', sans-serif;
-        }
-
-        .code-mark {
-            margin-left : 10px ;
-        }
-
-        .con-body .col-md-3 {
-            min-height:450px ;
-        }
-
-        .list-group-item span {
-            margin-left : 10px;
-        }
-
-        .btn {
-            margin-bottom: 5px;
-        }
-
-        /*.chart {
-            height:100px;
-        }*/
-
-    </style>
+    <link rel="stylesheet" href="styles/main.css?1710141733">
 
 </head>
+
 <body>
-<p class="pmsg"></p>
-<div class="container-fluid">
-    <div class="row con-menu">
-        <div class="col-lg-6 con-btn-bar">
-            <h1>力爭上歐</h1> 
-            <span class="label label-success">Ver. 1.1.8</span>
-            <span class="label label-success online"></span>
-            <span class="label label-success">5 SEC</span>
-            <span class="label label-success">100 TWEET</span>
-            <span class="label label-success label-rc">GET: ---</span>
-            <span class="label label-success label-sc">STREAMING: ---</span>
-            <span class="label label-success ws-update-time"></span>
-            <span class="label label-warning ws-bad">Failed</span>
+    <div id="vue-prpr" class="container-fluid">
+        <div class="row con-menu">
+            <div class="col-lg-6 con-btn-bar">
+                <span class="label label-success">{{ version }}</span>
+                <span class="label label-success">{{ request_time }}</span>
+                <span class="label label-success label-rc">R/S/O:
+                    {{ count_request }}/{{ count_streaming }}/{{ connections }}</span>
+                <span class="label label-warning">{{ connection_status }}</span>
+            </div>
         </div>
-        <div id="chart" class="col-lg-6 chart">
+        <hr />
+        <div class="row con-toggle">
+            <div class="col-lg-8 con-btn-bar">
+                <button type="button" class="btn btn-primary btn-tg btn-sm" v-if="!btn_show" v-on:click="btn_show=true"
+                    t-type="btn-show">按鈕顯示</button>
+                <button type="button" class="btn btn-primary btn-tg btn-sm" v-if="btn_show" v-on:click="btn_show=false"
+                    t-type="btn-hide">按鈕隱藏</button>
+                <button type="button" class="btn btn-primary btn-tg btn-sm btn-switch" v-if="btn_show"
+                    v-on:click="onClickShowAllTicket" t-type="all-show">列表顯示</button>
+                <button type="button" class="btn btn-primary btn-tg btn-sm btn-switch" v-if="btn_show"
+                    v-on:click="onClickHideAllTicket" t-type="all-hide">列表隱藏</button>
+            </div>
         </div>
+        <hr />
+        <div class="row con-toggle" v-for="group in groups">
+            <button type="button" v-if="btn_show" class="btn btn-primary btn-tg btn-sm btn-switch" v-for="item in group"
+                v-bind:t-type="item.type_id" v-on:click="item.show=!item.show">{{ item.label }}</button>
+        </div>
+        <hr />
+        <div class="row con-body">
+            <div v-for="item in list" v-if="item.show" v-bind:class="['col-md-4','list-type','list-'+item.type_id]">
+                <ul class="nav nav-pills">
+                    <li v-on:click="item.show=!item.show">
+                        <a>{{ item.label }}
+                            <span class="badge">{{ item.counts }}</span>
+                        </a>
+                    </li>
+                    <li v-on:click="item.se=!item.se">
+                        <a v-if="!item.se">音效開啟</a>
+                        <a v-if="item.se">音效關閉</a>
+
+                    </li>
+                </ul>
+                <ul v-bind:class="['list-group' , 'codelist-'+item.type_id]">
+                    <li class="list-group-item" v-for="ticket in item.tickets" v-on:click="ticket.opacity=0.5"
+                        v-bind:style="{ opacity: [ticket.opacity] }" v-bind:data-clipboard-text="ticket.code">
+                        <span class="code">{{ ticket.code }}</span>
+                        <span v-bind:class="['label' , ''+ticket.level_color]">Lv{{ ticket.level }}</span>
+                        <span calss="title">{{ ticket.boss_name }}</span>
+                        <span v-bind:style="{ color: [ticket.code_color] }" class="badge">{{ ticket.tweet_time }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <audio id="se_r">
+            <source src="./sounds/keyin.mp3" />
+        </audio>
+        <audio id="se_s">
+            <source src="./sounds/train.mp3" />
+        </audio>
+
+        <a href="https://github.com/Kcars/gbf-prpr"><img style="position: absolute; top: 0; right: 0; border: 0;"
+                src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67"
+                alt="Fork me on GitHub"
+                data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
+        <script src="./js/vue.min.js"></script>
+        <script src="./js/main.js?rnd=20190513124000"></script>
+
     </div>
-    <hr/>
-    <div class="row con-toggle">
-        
-        <div class="col-lg-2 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="all">全部切換</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="all-show">全部顯示</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="all-hide">全部隱藏</button>
-            
-        </div>
-
-        <div class="col-lg-3 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="1">風EX</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="2">火EX</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="3">水EX</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="4">土EX</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="5">光EX</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6">暗EX</button>
-        </div>
-        
-        <div class="col-lg-3 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10001">風HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10002">火HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10003">水HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10004">土HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10005">光HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10006">暗HL</button>
-        </div>
-
-        <div class="col-lg-3 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10010">召喚石1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10020">召喚石2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12020">召喚石HL</button>
-        </div>
-    <!--
-        <div class="col-lg-3 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10011">火召1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10012">水召1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10013">土召1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10014">風召1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10015">光召1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10016">暗召1</button>
-        </div>
-    -->
-    <!--  
-        <div class="col-lg-3 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10021">火召2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10022">水召2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10023">土召2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10024">風召2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10025">光召2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10026">暗召2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12021">火召2HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12022">水召2HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12023">土召2HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12024">風召2HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12025">光召2HL</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12026">暗召2HL</button>
-        </div>
-    -->  
-        <div class="col-lg-3 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6011">北玄1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6012">東青1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6013">西白1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="6014">南朱1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9011">北玄2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9012">東青2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9013">西白2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="9014">南朱2</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10031">黄龍</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10032">黒麒麟</button>
-        </div>
-
-        <div class="col-lg-3 con-btn-bar">
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10088">小巴</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="15088">大巴</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10099">丁丁</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="12030">解放用</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="10000">其他1</button>
-            <button type="button" class="btn btn-primary btn-tg btn-sm" t-type="999">其他2</button>
-        </div>
-        
-    </div>
-    <hr/>
-    <div class="row con-body">
-        
-        <div class="col-md-4 list-type list-10088">
-            <ul class="nav nav-pills">
-               <li><a>小巴<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10088">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-15088">
-            <ul class="nav nav-pills">
-               <li><a>大巴<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-15088">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10099">
-            <ul class="nav nav-pills">
-               <li><a>丁丁<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10099">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10000">
-            <ul class="nav nav-pills">
-               <li><a>其他1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10000">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-999">
-            <ul class="nav nav-pills">
-               <li><a>其他2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-999">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-12030">
-            <ul class="nav nav-pills">
-               <li><a>解放用<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12030">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-1">
-            <ul class="nav nav-pills">
-               <li><a>風EX<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-1">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-2">
-           <ul class="nav nav-pills">
-               <li><a>火EX<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-2">
-            </ul>
-        </div> 
-
-        <div class="col-md-4 list-type list-3">
-            <ul class="nav nav-pills">
-               <li><a>水EX<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-3">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-4">
-            <ul class="nav nav-pills">
-               <li><a>土EX<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-4">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-5">
-            <ul class="nav nav-pills">
-               <li><a>光EX<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-5">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-6">
-            <ul class="nav nav-pills">
-               <li><a>暗EX<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-6">
-            </ul>
-        </div> 
-
-        <div class="col-md-4 list-type list-10001">
-            <ul class="nav nav-pills">
-               <li><a>風HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10001">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10002">
-            <ul class="nav nav-pills">
-               <li><a>火HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10002">
-            </ul>
-        </div>
-        
-        <div class="col-md-4 list-type list-10003">
-            <ul class="nav nav-pills">
-               <li><a>水HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10003">
-            </ul>
-        </div>
-        
-        <div class="col-md-4 list-type list-10004">
-            <ul class="nav nav-pills">
-               <li><a>土HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10004">
-            </ul>
-        </div>
-        
-        <div class="col-md-4 list-type list-10005">
-            <ul class="nav nav-pills">
-               <li><a>光HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10005">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10006">
-            <ul class="nav nav-pills">
-               <li><a>暗HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10006">
-            </ul>
-        </div>
-
-        <!-- mark -->
-
-        <div class="col-md-4 list-type list-10010">
-            <ul class="nav nav-pills">
-               <li><a>召喚石1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10010">
-            </ul>
-        </div>
-
-    <!--  
-        <div class="col-md-4 list-type list-10011">
-            <ul class="nav nav-pills">
-               <li><a>火召1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10011">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10012">
-            <ul class="nav nav-pills">
-               <li><a>水召1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10012">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10013">
-            <ul class="nav nav-pills">
-               <li><a>土召1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10013">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10014">
-            <ul class="nav nav-pills">
-               <li><a>風召1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10014">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10015">
-            <ul class="nav nav-pills">
-               <li><a>光召1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10015">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10016">
-            <ul class="nav nav-pills">
-               <li><a>暗召1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10016">
-            </ul>
-        </div>
-    -->
-        <!-- mark -->
-
-        <div class="col-md-4 list-type list-10020">
-            <ul class="nav nav-pills">
-               <li><a>召喚石2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10020">
-            </ul>
-        </div>
-    <!--
-        <div class="col-md-4 list-type list-10021">
-            <ul class="nav nav-pills">
-               <li><a>火召2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10021">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10022">
-            <ul class="nav nav-pills">
-               <li><a>水召2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10012">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10023">
-            <ul class="nav nav-pills">
-               <li><a>土召2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10023">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10024">
-            <ul class="nav nav-pills">
-               <li><a>風召2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10024">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10025">
-            <ul class="nav nav-pills">
-               <li><a>光召2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10025">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10026">
-            <ul class="nav nav-pills">
-               <li><a>暗召2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10026">
-            </ul>
-        </div>
-    -->
-        <!-- mark -->
-
-        <div class="col-md-4 list-type list-12020">
-            <ul class="nav nav-pills">
-               <li><a>召喚石HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12020">
-            </ul>
-        </div>
-    <!--
-        <div class="col-md-4 list-type list-12021">
-            <ul class="nav nav-pills">
-               <li><a>火召2HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12021">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-12022">
-            <ul class="nav nav-pills">
-               <li><a>水召2HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12012">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-12023">
-            <ul class="nav nav-pills">
-               <li><a>土召2HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12023">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-12024">
-            <ul class="nav nav-pills">
-               <li><a>風召2HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12024">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-12025">
-            <ul class="nav nav-pills">
-               <li><a>光召2HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12025">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-12026">
-            <ul class="nav nav-pills">
-               <li><a>暗召2HL<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-12026">
-            </ul>
-        </div>
-    -->
-
-        <!-- mark --> 
-
-        <div class="col-md-4 list-type list-6011">
-            <ul class="nav nav-pills">
-               <li><a>北玄1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-6011">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-6012">
-            <ul class="nav nav-pills">
-               <li><a>東青1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-6012">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-6013">
-            <ul class="nav nav-pills">
-               <li><a>西白1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-6013">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-6014">
-            <ul class="nav nav-pills">
-               <li><a>南朱1<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-6014">
-            </ul>
-        </div>
-
-        <!-- mark -->
-
-        <div class="col-md-4 list-type list-9011">
-            <ul class="nav nav-pills">
-               <li><a>北玄2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-9011">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-9012">
-            <ul class="nav nav-pills">
-               <li><a>東青2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-9012">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-9013">
-            <ul class="nav nav-pills">
-               <li><a>西白2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-9013">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-9014">
-            <ul class="nav nav-pills">
-               <li><a>南朱2<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-9014">
-            </ul>
-        </div>
-
-        <!-- mark -->
-
-        <div class="col-md-4 list-type list-10031">
-            <ul class="nav nav-pills">
-               <li><a>黄龍<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10031">
-            </ul>
-        </div>
-
-        <div class="col-md-4 list-type list-10032">
-            <ul class="nav nav-pills">
-               <li><a>黒麒麟<span class="badge">0</span></a></li>
-            </ul>
-            <ul class="list-group codelist-10032">
-            </ul>
-        </div>
-        
-    </div>
-</div>
-
-<a href="https://github.com/Kcars/gbf-prpr"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="darkly/bootstrap/bootstrap.min.js"></script>
-<script src="darkly/bootstrap/usebootstrap.js"></script>
-
-
-<script src="./js/d3.js" charset="utf-8"></script>
-<script src="./js/c3.js"></script>
-
-<script>
-
-var codeHistory = [] ;
-
-function compare(a,b) {
-  if (a.ftime < b.ftime)
-    return -1;
-  if (a.ftime > b.ftime)
-    return 1;
-  return 0;
-}
-
-function doParsePrpr(list) {
-
-    var typeList = [] ;
-
-    list.sort(compare) ;
-
-    list.forEach(function (element) {
-        var tt = element.kind ;
-        var lv = element.lv ;
-        var cc = element.code ;
-        var na = element.name ;
-        var ti = element.ftime ;
-        var ff = element.by ;
-
-        if ( !Array.isArray( codeHistory[tt] ) ) { codeHistory[tt] = [] } ;
-        if ( codeHistory[tt].length >= 1000 )    { codeHistory[tt] = [] } ;
-
-        appendCode(tt , cc , na , lv , ti , ff , codeHistory[tt]) ;
-
-        codeHistory[tt].push(cc) ;
-        typeList.push(tt) ;
-    } ) ;
-
-    typeList.forEach( function ( val ) { 
-        $(".codelist-" + val).children(".list-group-item").children(".code").each(function(index , element) {
-        if ( index > 5 ) {
-            $(element).parent().fadeOut(500 , function() {
-                this.remove() ;
-            }) ;
-        }
-    })
-    } )
-}
-
-function doParseMark(list) {
-    list.forEach(function (element) {
-        var info = element.split(":") ;
-        var tt   = info[0] ;
-        var cc   = info[1] ;
-
-        markCode(tt , cc) ;
-    } ) ;
-} 
-
-function doTrackTooOldCode() {
-    var targets = $(".list-group-item").find(".badge") ;
- 
-    targets.each(function(index , element) { 
-        var tt  = $(element).text().split(":")[0] + $(element).text().split(":")[1] ;
-        var itt = parseInt(tt) ;
-        
-        var ct  = new Date().getHours().toString() + new Date().getMinutes().toString() ;
-        var ict = parseInt(ct) ;
-
-        var isOld = ict - itt >= 5 ;
-
-        
-        if( isOld ) { $( $(element).parent().get(0) ).fadeOut(500 , function() {
-            this.remove() ;
-        })}
-    })
-}
-
-function doParseTime ( val ) {
-    val = new Date(val) ;
-    return (val.getHours()   < 10 ? "0" + val.getHours()   : val.getHours()   ) + ":" +
-           (val.getMinutes() < 10 ? "0" + val.getMinutes() : val.getMinutes() ) + ":" +
-           (val.getSeconds() < 10 ? "0" + val.getSeconds() : val.getSeconds() ) ;
-}
-
-var ws  = new WebSocket("wss://prpr.pickoma.com:8443" , "echo-protocol") ;
-var tid = 0 ; 
-
-ws.onmessage = function(e) {
-      var rece = JSON.parse(e.data) ;
-      doTrackTooOldCode() ;
-
-      if( rece.prpr != null && rece.prpr.length > 0 ) { doParsePrpr(rece.prpr) ; }
-      if( rece.mark != null && rece.mark.length > 0 ) { doParseMark(rece.mark) ; }
-
-      $(".ws-update-time").text( "UPDATE TIME: " + doParseTime(rece.info.lut) ) ;
-      $(".online").text(rece.info.connections + " ONLINE") ;
-      $(".ws-bad").text("") ;
-
-      $(".label-rc").text("REQUEST: " + rece.info.rc) ;
-      $(".label-sc").text("STREAMING: " + rece.info.sc) ;
-}
-
-ws.onclose = function (e) {
-    $(".ws-bad").text("Failed") ;
-    notifyMe( "與伺服器斷線，請重新整理頁面" ) ;
-    
-    /*setTimeout(function(target) {
-        console.log("reconnect...") ;
-        target = new WebSocket("ws://prpr.pickoma.com:8080" , "echo-protocol") ;
-    } , 5000 , ws) ;*/
-}
-
-function appendCode (tt , cc , na , lv , ti , ff , alist) {
-    var lm = lv == "Lv100" || lv == "Lv110" || lv == "Lv120" || lv == "Lv150" ? "label-warning" : "label-info" ; lm = lv == "Lv120" || lv == "Lv150" ? "label-danger" : lm ;
-
-    var re = ff == "streaming" ? "red" : "white" ;
-
-    var html = "<li class=\"list-group-item\"><span class=\"code\">" + cc + "</span> <span class=\"label " + lm + "\">" + lv + "</span><span class=\"title\">"+na+"</span><span class=\"badge\" style=\"color:"+re+"\">" + ti + "</span></li>" ;
- 
-    var alreadyIn = alist.indexOf( cc ) == -1 ? false : true ;
-
-    if ( !alreadyIn ) {
-        $(html).prependTo(".codelist-" + tt).hide().fadeIn(500) ;
-        if ( tt == 10088 || tt == 10099 ) { notifyMe( na ) ; }
-    } else {
-    }
-}
-
-function markCode (tt , cc) {
-     var items = $(".codelist-" + tt + " span:contains(" + cc + ")") ;
-     
-     items.each(function(index , element){
-        if (!$(element).parent().is("del") ) {
-            $($(element).parent().get(0)).addClass("code-marked") ;
-            $(element).wrap("<del>") ;
-        }
-     })
-}
-
-////////
-////////
-////////
-
-$(".btn-tg").on("click" , function(){
-    var type = $(this).attr("t-type") ;
-
-    switch ( type ) {
-        case "all" :
-            $(".list-type").fadeToggle();
-        break ;
-
-        case "all-show" :
-            $(".list-type").hide().fadeIn(500) ;
-        break ;
-
-        case "all-hide" :
-            $(".list-type").fadeOut(500) ;
-        break ;
-
-        default : 
-            $(".list-" + type).fadeToggle();
-        break ;
-    }
-})
-
-function initView() {
-    var info = gd("show") ;
-    var list = info.split(",") ;
-    if( list.length > 0 ) {
-        $(".list-type").fadeOut(500) ;
-        list.forEach( function( element ) {
-            $(".list-" + element).fadeToggle();
-        })
-    }
-}
-
-function notifyMe( val ) {
-  if (!("Notification" in window)) {
-    alert("This browser does not support desktop notification");
-  }
-
-  else if (Notification.permission === "granted") {
-    var notification = new Notification(val);
-  }
-
-  else if (Notification.permission !== 'denied') {
-    Notification.requestPermission(function (permission) {
-      if (permission === "granted") {
-        var notification = new Notification(val);
-      }
-    });
-  }
-}
-
-function gd( name , url ) {
-    if (!url) url = location.href;
-    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-    var regexS = "[\\?&]"+name+"=([^&#]*)";
-    var regex = new RegExp( regexS );
-    var results = regex.exec( url );
-    return results == null ? null : results[1];
-}
-    
-initView() ;
-
-</script>
 </body>
+
 </html>

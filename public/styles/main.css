@@ -1,0 +1,31 @@
+ul {
+            padding-bottom: 5px;
+        }
+
+        .code {
+            font-family: 'Cousine', monospace;
+        }
+
+        .title {
+            font-family: 'Noto Sans Japanese', sans-serif;
+        }
+
+        .code-mark {
+            margin-left: 10px;
+        }
+
+        .con-body .col-md-3 {
+            min-height: 450px;
+        }
+
+        .list-group-item {
+            cursor:pointer;
+        }
+        .list-group-item span {
+            margin-left: 10px;
+        }
+
+        .btn {
+             margin-left: 5px;
+            margin-bottom: 5px;
+        }
