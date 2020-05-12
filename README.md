@@ -20,7 +20,7 @@ https://prpr.pickoma.com/
  
 # 目前功能
 
-- 使用 REST API & Streaming API 取得救援ID
+- 使用 Streaming API 取得救援ID
 - 每五秒自動更新
 - 可以依照分類開關顯示
 
