@@ -3,3 +3,4 @@ stats
 tests
 config.json
 export.sh
+.DS_Store

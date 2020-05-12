@@ -41,10 +41,12 @@ function doSearchKeyWord() {
         if (error) { console.log(error); }
         if (tweets != null && tweets.statuses != null) {
             let first_tweet = tweets.statuses[0];
-            since_id = first_tweet.id_str;
-            tweets.statuses.forEach((tweet) => {
-                doParseTweet(tweet, tweet_type);
-            })
+            if (first_tweet != null) {
+                since_id = first_tweet.id_str;
+                tweets.statuses.forEach((tweet) => {
+                    doParseTweet(tweet, tweet_type);
+                })
+            }
         }
     })
 }
@@ -120,7 +122,9 @@ function doParseTweet(tweet, by) {
                 if (res != 1) {
                     redis_client.sadd(KEY_GBF_CODES, code, (err, res) => {
                         redis_client.rpush(KEY_GBF_RAIDS, obj_str);
+
                         redis_client.hincrby(KEY_GBF_STATS, by, 1);
+                        redis_client.hincrby(KEY_GBF_STATS, type, 1);
 
                         redis_client.scard(KEY_GBF_CODES, (err, res) => {
                             if (res > 10000) {

@@ -132,6 +132,20 @@ class Utils {
 
         return result;
     }
+
+    static getWFType(boss_name) {
+        let result = 995;
+
+        result = boss_name == "ヴィエ・ソラス 初級" ? 1 : result;
+        result = boss_name == "不死王レシタール 中級" ? 2 : result;
+        result = boss_name == "カースアークエギル 中級" ? 3 : result;
+
+        //if (result == 995) {
+        //    redis_client.sadd(KEY_GBG_CHECK_BOSS_NAME, `${level},${boss_name}`);
+        //}
+
+        return result;
+    }
 }
 
 module.exports = Utils; 

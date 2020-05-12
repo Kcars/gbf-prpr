@@ -8,6 +8,7 @@ const redis_client = redis.createClient();
 
 const KEY_GBF_STATS = "gbf_raids_stats";
 const KEY_GBF_RAIDS = "gbf_raids";
+const KEY_WF_RAIDS = "wf_raids";
 
 ////
 
@@ -152,12 +153,52 @@ function doCheckQueue() {
     });
 }
 
+function doCheckWFQueue() {
+    if (tid_wf != null) {
+        clearTimeout(tid_wf);
+        tid_wf = null;
+    }
+
+    redis_client.lpop(KEY_WF_RAIDS, (err, res) => {
+        if (err) { console.log(err); }
+        if (res != null) {
+            let item = null;
+            try {
+                item = JSON.parse(res);
+            } catch (err) {
+                console.log(err);
+            }
+
+            if (item != null) {
+                let command = "item_wf";
+                let output = { command, item };
+                let output_str = JSON.stringify(output);
+
+                console.log(`send: ${output_str}`);
+                doBroadcast(output_str);
+            }
+        }
+
+        redis_client.llen(KEY_WF_RAIDS, (err, res) => {
+            if (err) { console.log(err); }
+            if (res > 0) {
+                doCheckWFQueue();
+            } else {
+                tid_wf = setTimeout(doCheckWFQueue, 1000);
+            }
+        })
+    });
+}
+
 let start_date = getDate();
 
 let connection_list = [];
 let tid = null;
+let tid_wf = null;
 let total_status = null;
 
 doCheckQueue();
+
+doCheckWFQueue() ;
 
 run();

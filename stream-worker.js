@@ -140,9 +140,10 @@ function doParseTweet(tweet, by) {
                     if (res != 1) {
                         redis_client.sadd(KEY_GBF_CODES, code, (err, res) => {
                             redis_client.rpush(KEY_GBF_RAIDS, obj_str);
+                           
                             redis_client.hincrby(KEY_GBF_STATS, by, 1);
-                            
-                            doPostToEs(obj);
+                            redis_client.hincrby(KEY_GBF_STATS, type, 1);
+                            //doPostToEs(obj);
 
                             redis_client.scard(KEY_GBF_CODES, (err, res) => {
                                 if (res > 10000) {

@@ -4,12 +4,15 @@
   "description": "gbf-prpr",
   "main": "websocket-worker.js",
   "dependencies": {
-    "crawler": "^0.4.3",
-    "knex": "^0.16.3",
+    "crawler": "^1.2.1",
+    "html-to-json": "^0.6.0",
+    "htmlparser2": "^4.1.0",
+    "jsdom": "^15.2.1",
+    "knex": "^0.16.5",
     "redis": "^2.8.0",
-    "sqlite3": "^3.1.10",
+    "sqlite3": "^4.2.0",
     "twitter": "^1.7.1",
-    "websocket": "^1.0.24"  
+    "websocket": "^1.0.31"
   },
   "devDependencies": {},
   "scripts": {
