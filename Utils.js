@@ -60,9 +60,11 @@ class Utils {
 
             result = boss_name == "黄龍" || boss_name == "Huanglong" ? 100405 : result;
             result = boss_name == "黒麒麟" || boss_name == "Qilin" ? 100406 : result;
+            result = boss_name == "四象瑞神" || boss_name == "Shenxian" ? 100407 : result;
 
             result = boss_name == "ゼノ・コキュートス" || boss_name == "ゼノ・コキュートス" ? 100503 : result;
             result = boss_name == "ゼノ・ウォフマナフ" || boss_name == "ゼノ・ウォフマナフ" ? 100504 : result;
+            result = boss_name == "ゼノ・コロゥ" || boss_name == "Xeno Corow" ? 100505 : result;
 
             result = boss_name == "ジ・オーダー・グランデ" || boss_name == "Grand Order" ? 100905 : result;
             result = boss_name == "プロトバハムート" || boss_name == "Proto Bahamut" ? 100906 : result;
@@ -108,8 +110,24 @@ class Utils {
             // max 18
             result = boss_name == "プロトバハムート" || boss_name == "Proto Bahamut" ? 150106 : result;
 
-            // max 6
             result = boss_name == "ティアマト・マリス" || boss_name == "Tiamat Malice" ? 150201 : result;
+            result = boss_name == "リヴァイアサン・マリス" || boss_name == "Leviathan Malice" ? 150203 : result;
+
+            result = boss_name == "フロネシス" || boss_name == "Phronesis" ? 150304 : result;
+        }
+
+        if (level == 200) {
+            result = boss_name == "イーウィヤ" || boss_name == "Ewiyar" ? 200201 : result;
+            result = boss_name == "ウィルナス" || boss_name == "Wilnas" ? 200202 : result;
+            result = boss_name == "ワムデュス" || boss_name == "Wamdus" ? 200203 : result;
+            result = boss_name == "ガレヲン" || boss_name == "Galleon" ? 200204 : result;
+            result = boss_name == "ル・オー" || boss_name == "Lu Woh" ? 200205 : result;
+            result = boss_name == "フェディエル" || boss_name == "Fediel" ? 200206 : result;
+
+            result = boss_name == "アーカーシャ" || boss_name == "Akasha" ? 200305 : result;
+            result = boss_name == "ジ・オーダー・グランデ" || boss_name == "Grand Order" ? 200405 : result;
+
+            result = boss_name == "アルティメットバハムート" || boss_name == "Ultimate Bahamut" ? 200407 : result;
         }
 
         result = boss_name == "青竜" || boss_name == "青竜" || boss_name == "Qinglong" ? 60001 : result;
@@ -126,9 +144,7 @@ class Utils {
 
         result = boss_name == "四大天司HL" ? 200007 : result;
 
-        //if (result == 995) {
-        //    redis_client.sadd(KEY_GBG_CHECK_BOSS_NAME, `${level},${boss_name}`);
-        //}
+        result = boss_name == "リンドヴルム" || boss_name == "Lindwurm" ? 200107 : result;
 
         return result;
     }

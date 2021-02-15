@@ -17,6 +17,8 @@ const KEY_GBF_CODES = "gbf_raids_codes";
 const KEY_GBF_RAIDS = "gbf_raids";
 const KEY_GBF_POSTERS = "gbf_raids_poster";
 
+const KEY_GBG_CHECK_BOSS_NAME = "gbf_boss_name_check";
+
 ////
 
 const Utils = require("./Utils.js");
@@ -65,7 +67,7 @@ function doCheckStatus() {
 }
 
 function doParseTweet(tweet, by) {
-    let screen_name = tweet.user.screen_name;
+    let screen_name = tweet.user != null ? tweet.user.screen_name : "none";
     let content = tweet != null && tweet.text != null ? tweet.text.replace(/(\r\n|\n|\r)/gm, " ") : "";
     let time = new Date(tweet.created_at);
     let tweet_time = Utils.doParseTime(time);
@@ -123,6 +125,10 @@ function doParseTweet(tweet, by) {
 
                 let type = Utils.getType(level, boss_name);
 
+                if (type == 995) {
+                    redis_client.sadd(KEY_GBG_CHECK_BOSS_NAME, `${level},${boss_name}`);
+                }
+
                 let obj = {
                     type
                     , level
@@ -140,7 +146,7 @@ function doParseTweet(tweet, by) {
                     if (res != 1) {
                         redis_client.sadd(KEY_GBF_CODES, code, (err, res) => {
                             redis_client.rpush(KEY_GBF_RAIDS, obj_str);
-                           
+
                             redis_client.hincrby(KEY_GBF_STATS, by, 1);
                             redis_client.hincrby(KEY_GBF_STATS, type, 1);
                             //doPostToEs(obj);
@@ -171,7 +177,7 @@ function doPostToEs(obj) {
     let screen_name = obj.screen_name;
     let post_time = new Date(obj.time_num).toISOString();
 
-    let index_name = `gbf_raids-${dd}` ;
+    let index_name = `gbf_raids-${dd}`;
     let url = `${config.es_url}/${index_name}/doc/`
 
     let method = "POST";

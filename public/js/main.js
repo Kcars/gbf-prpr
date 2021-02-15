@@ -34,14 +34,13 @@ let item_list = [
     , { "group_id": 5, "type_id": "100205", "label": "光召2", "tickets": [], "show": false, "se": false }
     , { "group_id": 6, "type_id": "100206", "label": "暗召2", "tickets": [], "show": false, "se": false }
 
+    , { "group_id": 1, "type_id": "100501", "label": "風擊滅", "tickets": [], "show": false, "se": false }
+    , { "group_id": 2, "type_id": "100502", "label": "火擊滅", "tickets": [], "show": false, "se": false }
     , { "group_id": 3, "type_id": "100503", "label": "水擊滅", "tickets": [], "show": false, "se": false }
     , { "group_id": 4, "type_id": "100504", "label": "土擊滅", "tickets": [], "show": false, "se": false }
-     
-    , { "group_id": 7, "type_id": "100905", "label": "丁丁", "tickets": [], "show": false, "se": false }
-    , { "group_id": 7, "type_id": "100906", "label": "小巴", "tickets": [], "show": false, "se": false }
-
-    , { "group_id": 7, "type_id": "110001", "label": "BBA", "tickets": [], "show": false, "se": false }
-
+    , { "group_id": 5, "type_id": "100505", "label": "光擊滅", "tickets": [], "show": false, "se": false }
+    , { "group_id": 6, "type_id": "100506", "label": "暗擊滅", "tickets": [], "show": false, "se": false }
+    
     , { "group_id": 1, "type_id": "120001", "label": "風召2HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 2, "type_id": "120002", "label": "火召2HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 3, "type_id": "120003", "label": "水召2HL", "tickets": [], "show": false, "se": false }
@@ -49,21 +48,19 @@ let item_list = [
     , { "group_id": 5, "type_id": "120005", "label": "光召2HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 6, "type_id": "120006", "label": "暗召2HL", "tickets": [], "show": false, "se": false }
 
-    , { "group_id": 1, "type_id": "100301", "label": "風天司", "tickets": [], "show": false, "se": false }
-    , { "group_id": 2, "type_id": "100302", "label": "火天司", "tickets": [], "show": false, "se": false }
-    , { "group_id": 3, "type_id": "100303", "label": "水天司", "tickets": [], "show": false, "se": false }
-    , { "group_id": 4, "type_id": "100304", "label": "土天司", "tickets": [], "show": false, "se": false }
-
-    , { "group_id": 7, "type_id": "150005", "label": "路西法", "tickets": [], "show": false, "se": false }
-    , { "group_id": 7, "type_id": "150006", "label": "U巴N", "tickets": [], "show": false, "se": false }
-    , { "group_id": 7, "type_id": "150106", "label": "大巴", "tickets": [], "show": false, "se": false }
-
     , { "group_id": 1, "type_id": "120201", "label": "風鞄HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 2, "type_id": "120202", "label": "火鞄HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 3, "type_id": "120203", "label": "水鞄HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 4, "type_id": "120204", "label": "土鞄HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 5, "type_id": "120205", "label": "光鞄HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 6, "type_id": "120206", "label": "暗鞄HL", "tickets": [], "show": false, "se": false }
+
+    , { "group_id": 1, "type_id": "200201", "label": "風龍", "tickets": [], "show": false, "se": false }
+    , { "group_id": 2, "type_id": "200202", "label": "火龍", "tickets": [], "show": false, "se": false }
+    , { "group_id": 3, "type_id": "200203", "label": "水龍", "tickets": [], "show": false, "se": false }
+    , { "group_id": 4, "type_id": "200204", "label": "土龍", "tickets": [], "show": false, "se": false }
+    , { "group_id": 5, "type_id": "200205", "label": "光龍", "tickets": [], "show": false, "se": false }
+    , { "group_id": 6, "type_id": "200206", "label": "暗龍", "tickets": [], "show": false, "se": false }
 
     , { "group_id": 1, "type_id": "60001", "label": "東青1", "tickets": [], "show": false, "se": false }
     , { "group_id": 2, "type_id": "60002", "label": "南朱1", "tickets": [], "show": false, "se": false }
@@ -74,9 +71,34 @@ let item_list = [
     , { "group_id": 2, "type_id": "90002", "label": "南朱2", "tickets": [], "show": false, "se": false }
     , { "group_id": 3, "type_id": "90003", "label": "北玄2", "tickets": [], "show": false, "se": false }
     , { "group_id": 4, "type_id": "90004", "label": "西白2", "tickets": [], "show": false, "se": false }
+    
+    , { "group_id": 1, "type_id": "100301", "label": "風天司", "tickets": [], "show": false, "se": false }
+    , { "group_id": 2, "type_id": "100302", "label": "火天司", "tickets": [], "show": false, "se": false }
+    , { "group_id": 3, "type_id": "100303", "label": "水天司", "tickets": [], "show": false, "se": false }
+    , { "group_id": 4, "type_id": "100304", "label": "土天司", "tickets": [], "show": false, "se": false }
+
+    , { "group_id": 1, "type_id": "150201", "label": "黑風", "tickets": [], "show": false, "se": false }
+    , { "group_id": 3, "type_id": "150203", "label": "黑水", "tickets": [], "show": false, "se": false }
+
+    , { "group_id": 7, "type_id": "100905", "label": "小丁", "tickets": [], "show": false, "se": false }
+    , { "group_id": 7, "type_id": "200405", "label": "大丁", "tickets": [], "show": false, "se": false }
+   
+    , { "group_id": 7, "type_id": "200107", "label": "真龍", "tickets": [], "show": false, "se": false }
+
+    , { "group_id": 7, "type_id": "100906", "label": "小巴", "tickets": [], "show": false, "se": false }
+    , { "group_id": 7, "type_id": "150106", "label": "大巴", "tickets": [], "show": false, "se": false }
+    , { "group_id": 7, "type_id": "150006", "label": "U巴N", "tickets": [], "show": false, "se": false }
+    , { "group_id": 7, "type_id": "200407", "label": "U巴HL", "tickets": [], "show": false, "se": false }
+   
+    , { "group_id": 7, "type_id": "110001", "label": "BBA", "tickets": [], "show": false, "se": false }
+
+    , { "group_id": 7, "type_id": "150005", "label": "路西法", "tickets": [], "show": false, "se": false }
+    , { "group_id": 7, "type_id": "200305", "label": "阿卡夏", "tickets": [], "show": false, "se": false }
 
     , { "group_id": 7, "type_id": "100405", "label": "黄龍", "tickets": [], "show": false, "se": false }
     , { "group_id": 7, "type_id": "100406", "label": "黒麒麟", "tickets": [], "show": false, "se": false }
+    , { "group_id": 7, "type_id": "100407", "label": "四象瑞神", "tickets": [], "show": false, "se": false }
+    
     , { "group_id": 7, "type_id": "120307", "label": "黄龍・黒麒麟HL", "tickets": [], "show": false, "se": false }
     , { "group_id": 7, "type_id": "200007", "label": "四大天司HL", "tickets": [], "show": false, "se": false }
 
